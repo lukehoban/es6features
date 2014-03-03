@@ -380,8 +380,8 @@ m.get(s) == 34;
 
 // Weak Maps
 var wm = new WeakMap();
-m.set(s, { extra: 42 });
-m.size === undefined
+wm.set(s, { extra: 42 });
+wm.size === undefined
 
 // Weak Sets
 var ws = new WeakSet();
