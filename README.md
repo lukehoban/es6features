@@ -522,9 +522,9 @@ Full reflection API exposing the runtime-level meta-operations on objects.  This
 Calls in tail-position are guaranteed to not grow the stack unboundedly.  Makes recursive algorithms safe in the face of unbounded inputs.  
 
 ```JavaScript
-function factorial(n) {
-    if (n <= 1) return 1;
-    return n * factorial(n - 1);
+function factorial(n, acc = 1) {
+    if (n <= 1) return acc;
+    return factorial(n - 1, n * acc);
 }
 
 // Stack overflow in most implementations today,
