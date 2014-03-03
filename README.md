@@ -1,7 +1,7 @@
 ﻿# ECMAScript 6
 
 ## Introduction
-ECMAScript 6 is the upcoming version of the ECMAScript standard.  This standard is targetting ratifcation in December 2014.  ES6 is a significant update to the language, and the first update to the language since ES5 was standardized in 2009.    Implemntation of these features in major JavaScript engines is [underway now](http://kangax.github.io/es5-compat-table/es6/).  
+ECMAScript 6 is the upcoming version of the ECMAScript standard.  This standard is targetting ratifcation in December 2014.  ES6 is a significant update to the language, and the first update to the language since ES5 was standardized in 2009.    Implementation of these features in major JavaScript engines is [underway now](http://kangax.github.io/es5-compat-table/es6/).  
 
 See the [draft ES6 standard](https://people.mozilla.org/~jorendorff/es6-draft.html) for full specification of the ECMAScript 6 language.
 
