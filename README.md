@@ -141,7 +141,7 @@ Callee-evaluated default parameter values.  Turn an array into consecutive argum
 
 ```JavaScript
 function f(x, y=12) { 
-  // y is 12 if not passed
+  // y is 12 if not passed (or passed as undefined)
   return x + y;
 }
 f(3)
@@ -264,11 +264,11 @@ var results = [
 ]
 
 // Generator comprehensions
-var results = { 
+var results = (
   for(c of customers)
   if (c.city == "Seattle") 
   { name: c.name, age: c.age }
-}
+)
 ```
 
 ### Unicode
@@ -305,12 +305,12 @@ export var pi = 3.141593;
 ```
 ```JavaScript 
 // app.js
-module math from "lib/math”;
+module math from "lib/math";
 alert("2π = " + math.sum(math.pi, math.pi));
 ```
 ```JavaScript
 // otherApp.js
-import {sum, pi} from "lib/math”;
+import {sum, pi} from "lib/math";
 alert("2π = " + sum(pi, pi));
 ```
 
@@ -318,7 +318,7 @@ Some additional features include `default export` and `export *`:
 
 ```JavaScript
 // lib/mathplusplus.js
-export * from "lib/math”;
+export * from "lib/math";
 export var e = 2.71828182846;
 export default function(x) {
     return Math.exp(x);
@@ -326,8 +326,8 @@ export default function(x) {
 ```
 ```JavaScript
 // app.js
-module math from "lib/mathplusplus”;
-import exp from "lib/mathplusplus”;
+module math from "lib/mathplusplus";
+import {exp} from "lib/mathplusplus";
 alert("2π = " + exp(math.pi, math.e));
 ```
 
@@ -351,11 +351,11 @@ System.import('lib/math').then(function(m) {
 var loader = new Loader({
   global: fixup(window) // replace ‘console.log’
 });
-loader.eval("console.log('hello world!';)")
+loader.eval("console.log('hello world!');")
 
 // Directly manipulate module cache
 System.get('jquery')
-System.set('jquery', Module({$: $}))
+System.set('jquery', Module({$: $})) // WARNING: not yet finalized
 ```
 
 ### Map + Set + WeakMap
@@ -405,7 +405,7 @@ proxy.x = 3;
 ```
 
 ### Symbols
-Symbols enable access control for object state.  Symbols allow properties to be keyed by either `string` (as in ES5) or `symbol`.  Symbols are a new primitive type. Optional `name` parameter used in debugging - but is not part of identity.  Symbols are unique (like gensym), but not private since they are exposed via reflection features like `Object.symbols`.
+Symbols enable access control for object state.  Symbols allow properties to be keyed by either `string` (as in ES5) or `symbol`.  Symbols are a new primitive type. Optional `name` parameter used in debugging - but is not part of identity.  Symbols are unique (like gensym), but not private since they are exposed via reflection features like `Object.getOwnPropertySymbols`.
 
 
 ```JavaScript
@@ -478,7 +478,7 @@ Math.imul(Math.pow(2, 32) - 1, Math.pow(2, 32) - 2) // 2
 "abc".repeat(3) // "abcabcabc"
 
 Array.from(document.querySelectorAll('*')) // Returns a real Array
-Array.of(1, 2, 3) // Similar to new Array(...), but without flattening
+Array.of(1, 2, 3) // Similar to new Array(...), but without special one-arg behavior
 [0, 0, 0].fill(7, 1) // [0,7,7]
 [1,2,3].findIndex(x => x == 2) // 1
 ["a", "b", "c"].entries() // iterator [0, "a"], [1,"b"], [2,"c"]
@@ -503,7 +503,7 @@ var p = timeout(1000).then(() => {
 }).then(() => {
     throw new Error("hmm");
 }).catch(err => {
-    return Promise.all(timeout(100), timeout(200));
+    return Promise.all([timeout(100), timeout(200)]);
 })
 ```
 
