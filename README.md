@@ -119,7 +119,7 @@ GET`http://foo.org/bar?a=${a}&b=${b}
 ```
 
 ### Destructuring
-Destructing allows binding using pattern matching, with support for matching arrays and objects.
+Destructing allows binding using pattern matching, with support for matching arrays and objects.  Destructuring is fail-soft, similar to standard object lookup `foo["bar"]`, producing `undefined` values when not found.
 
 ```JavaScript
 // list matching
@@ -134,6 +134,10 @@ function g({name: x}) {
   console.log(x);
 }
 g({name: 5})
+
+// Fail-soft destructuring
+var [a] = [];
+a === undefined;
 ```
 
 ### Default + Rest + Spread
