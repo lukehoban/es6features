@@ -465,7 +465,7 @@ var c = new MyClass("hello")
 c["key"] === undefined
 ```
 
-### Subclassable Bult-ins
+### Subclassable Built-ins
 In ES6, built-ins like `Array`, `Date` and DOM `Element`s can be subclassed.  
 
 Object construction for a function named `Ctor` now uses two-phases (both virtually dispatched):
