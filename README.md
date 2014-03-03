@@ -414,6 +414,7 @@ var handler = {
   }
 };
 
+var p = new Proxy(target, handler);
 p() === 'I am the proxy';
 ```
 
