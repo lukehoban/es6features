@@ -19,7 +19,7 @@ ES6 includes the following new features:
 - [unicode](#unicode)
 - [modules](#modules)
 - [module loaders](#modules-loaders)
-- [map + set + weakmap](#map--set--weakmap)
+- [map + set + weakmap + weakset](#map--set--weakmap--weakset)
 - [proxies](#proxies)
 - [symbols](#symbols)
 - [subclassable built-ins](#subclassable-built-ins)
@@ -362,7 +362,7 @@ System.get('jquery')
 System.set('jquery', Module({$: $})) // WARNING: not yet finalized
 ```
 
-### Map + Set + WeakMap
+### Map + Set + WeakMap + WeakSet
 Efficient data structures for common algorithms.  WeakMaps provides leak-free object-key’d side tables.  
 
 ```JavaScript
@@ -382,6 +382,11 @@ m.get(s) == 34;
 var wm = new WeakMap();
 m.set(s, { extra: 42 });
 m.size === undefined
+
+// Weak Sets
+var ws = new WeakSet();
+ws.add({ data: 42 });
+// Because the added object has no other references, it will not be held in the set
 ```
 
 ### Proxies
