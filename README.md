@@ -392,25 +392,51 @@ ws.add({ data: 42 });
 ### Proxies
 Proxies enable creation of objects with the full range of behaviors available to host objects.  Can be used for interception, object virtualization, logging/profiling, etc.
 
+```JavaScript
+// Proxying a normal object
+var target = {};
+var handler = {  
+  get: function (receiver, name) {    
+    return `Hello, ${name}!`;
+  }
+};
+
+var p = new Proxy(target, handler);
+p.world === 'Hello, world!';
 ```
+
+```
+// Proxying a function object
+var target = function () { return 'I am the target'; };
+var handler = {
+  call: function (receiver, ...args) {
+    return 'I am the proxy';
+  }
+};
+
+p() === 'I am the proxy';
+```
+
+There are traps available for all of the runtime-level meta-operations:
+
+```JavaScript
 var handler = 
 {
-  getOwnPropertyDescriptor: ...,
-  getOwnPropertyNames: ...,
-  defineProperty: ...,    
-  deleteProperty: ...,   
-  get: ...,
-  set: ...,   
-  // …
+  get:...,
+  set:...,
+  has:...,
+  deleteProperty:...,
+  apply:..., 
+  construct:...,
+  getOwnPropertyDescripto:...r, 
+  defineProperty:...,
+  getPrototypeOf:..., 
+  setPrototypeOf:...,
+  enumerate:..., 
+  ownKeys:...,
+  preventExtensions:..., 
+  isExtensible:...
 }
-
-var obj = {x: 1};
-
-// Create a proxy wrapping an object
-var proxy = Proxy(obj, handler);
-
-// Invokes trap on handler
-proxy.x = 3;
 ```
 
 ### Symbols
