@@ -314,7 +314,7 @@ import {sum, pi} from "lib/math";
 alert("2π = " + sum(pi, pi));
 ```
 
-Some additional features include `default export` and `export *`:
+Some additional features include `export default` and `export *`:
 
 ```JavaScript
 // lib/mathplusplus.js
@@ -327,7 +327,7 @@ export default function(x) {
 ```JavaScript
 // app.js
 module math from "lib/mathplusplus";
-import {exp} from "lib/mathplusplus";
+import exp from "lib/mathplusplus";
 alert("2π = " + exp(math.pi, math.e));
 ```
 
