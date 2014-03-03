@@ -272,7 +272,7 @@ var results = {
 ```
 
 ### Unicode
-Non-breaking additions to support full Unicode, including new unicode literal form in strings nad new RegExp `u` mode to handle code points, as well as new APIs to process strings at the 21bit code points level.  These additions support building global apps in JavaScript.
+Non-breaking additions to support full Unicode, including new unicode literal form in strings and new RegExp `u` mode to handle code points, as well as new APIs to process strings at the 21bit code points level.  These additions support building global apps in JavaScript.
 
 ```JavaScript
 // same as ES5.1
@@ -412,118 +412,4 @@ Symbols enable access control for object state.  Symbols allow properties to be 
 (function() {
   
   // module scoped symbol
-  var key = Symbol("key");
-
-  function MyClass(privateData) {
-    this[key] = privateData; 
-  }
-
-  MyClass.prototype = { 
-    doStuff: function() { 
-      ... this[key] ... 
-    } 
-  };
-
-})();
-
-var c = new MyClass("hello") 
-c["key"] === undefined
-```
-
-### Subclassable Bult-ins
-In ES6, built-ins like `Array`, `Date` and DOM `Element`s can be subclassed.  
-
-Object construction for a function named `Ctor` now uses two-phases (both virtually dispatched):
-- Call `Ctor[@@create]` to allocate the object, installing any special behavior
-- Invoke constructor on new instance to initialize
-
-The known `@@create` symbol is available via `Symbol.create`.  Built-ins now expose their `@@create` explicitly.
-
-```JavaScript
-// Psuedo-code of Array
-class Array {
-    constructor(...args) { /* ... */ }
-    static [Symbol.create]() {
-        // Install special [[DefineOwnProperty]]
-        // to magically update 'length'
-    }
-}
-
-// User code of Array subclass
-class MyArray extends Array {
-    constructor(...args) { super(...args); }
-}
-
-// Two-phase 'new':
-// 1) Call @@create to allocate object
-// 2) Invoke constructor on new instance
-var arr = new MyArray();
-arr[1] = 12;
-arr.length == 2 
-```
-
-### Math + Number + String + Object APIs
-Many newlibrary additions, including core Math libraries, Array conversion helpers, and Object.assign for copying.
-
-```JavaScript
-Number.EPSILON
-Number.isInteger(Infinity) // false
-Number.isNaN("NaN") // false
-
-Math.acosh(3) // 1.762747174039086
-Math.hypot(3, 4) // 5
-Math.imul(Math.pow(2, 32) - 1, Math.pow(2, 32) - 2) // 2
-
-"abcde".contains("cd") // true
-"abc".repeat(3) // "abcabcabc"
-
-Array.from(document.querySelectorAll('*')) // Returns a real Array
-Array.of(1, 2, 3) // Similar to new Array(...), but without flattening
-[0, 0, 0].fill(7, 1) // [0,7,7]
-[1,2,3].findIndex(x => x == 2) // 1
-["a", "b", "c"].entries() // iterator [0, "a"], [1,"b"], [2,"c"]
-["a", "b", "c"].keys() // iterator 0, 1, 2
-["a", "b", "c"].values() // iterator "a", "b", "c"
-
-Object.assign(Point, { origin: new Point(0,0)})
-```
-
-### Promises
-Promises are a library for asynchronous programming.  Promises are a first class representation of a value that may be made available in the future.  Promises are used in many existing JavaScript libraries.
-
-```JavaScript
-function timeout(duration = 0) {
-    return new Promise((resolve, reject) => {
-        setTimeout(resolve, duration);
-    })
-}
-
-var p = timeout(1000).then(() => {
-    return timeout(2000);
-}).then(() => {
-    throw new Error("hmm");
-}).catch(err => {
-    return Promise.all(timeout(100), timeout(200));
-})
-```
-
-### Reflect API
-Full reflection API exposing the runtime-level meta-operations on objects.  This is effectively the inverse of the Proxy API, and allows making calls corresponding to the same meta-operations as the proxy traps.  Especially useful for implementing proxies.
-
-```JavaScript
-// No sample yet
-```
-
-### Tail Calls
-Calls in tail-position are guaranteed to not grow the stack unboundedly.  Makes recursive algorithms safe in the face of unbounded inputs.  
-
-```JavaScript
-function factorial(n) {
-    if (n <= 1) return 1;
-    return n * factorial(n - 1);
-}
-
-// Stack overflow in most implementations today,
-// but safe on arbtrariy inputs in eS6
-factorial(100000)
-```
+  var key = 
