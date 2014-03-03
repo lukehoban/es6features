@@ -1,4 +1,4 @@
-# ECMAScript 6
+﻿# ECMAScript 6
 
 ## Introduction
 ECMAScript 6 is the upcoming version of the ECMAScript standard.  This standard is targetting ratifcation in December 2014.  ES6 is a significant update to the language, and the first update to the language since ES5 was standardized in 2009.    Implemntation of these features in major JavaScript engines is [underway now](http://kangax.github.io/es5-compat-table/es6/).  
@@ -272,7 +272,7 @@ var results = (
 ```
 
 ### Unicode
-Non-breaking additions to support full Unicode, including new unicode literal form in strings nad new RegExp `u` mode to handle code points, as well as new APIs to process strings at the 21bit code points level.  These additions support building global apps in JavaScript.
+Non-breaking additions to support full Unicode, including new unicode literal form in strings and new RegExp `u` mode to handle code points, as well as new APIs to process strings at the 21bit code points level.  These additions support building global apps in JavaScript.
 
 ```JavaScript
 // same as ES5.1
