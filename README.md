@@ -405,7 +405,7 @@ var p = new Proxy(target, handler);
 p.world === 'Hello, world!';
 ```
 
-```
+```JavaScript
 // Proxying a function object
 var target = function () { return 'I am the target'; };
 var handler = {
