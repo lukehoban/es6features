@@ -10,7 +10,7 @@ ES6 includes the following new features:
 - [classes](#classes)
 - [enhanced object literals](#enhanced-object-literals)
 - [template strings](#template-strings)
-- [destructuring](#destructring)
+- [destructuring](#destructuring)
 - [default + rest + spread](#default--rest--spread)
 - [let + const](#let--const)
 - [iterators + for..of](#iterators--forof)
