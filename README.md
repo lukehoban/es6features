@@ -129,6 +129,10 @@ var [a, , b] = [1,2,3];
 var { op: a, lhs: { op: b }, rhs: c } 
        = getASTNode()
 
+// object matching shorthand
+// binds `op`, `lhs` and `rhs` in scope
+var {op, lhs, rhs} = getASTNode()
+
 // Can be used in parameter position
 function g({name: x}) {
   console.log(x);
