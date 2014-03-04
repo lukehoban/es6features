@@ -193,12 +193,12 @@ function f() {
 Iterator objects enable custom iteration like CLR IEnumerable or Java Iteratable.  Generalize `for..in` to custom iterator-based iteration with `for..of`.  Don’t require realizing an array, enabling lazy design patterns like LINQ.
 
 ```JavaScript
-var fibonacci = {
+let fibonacci = {
   [Symbol.iterator]() {
-    var pre = 0, cur = 1;
+    let pre = 0, cur = 1;
     return {
       next() {
-        var temp = pre; pre = cur; cur += temp;
+        [pre, cur] = [cur, pre + cur];
         return { done: false, value: cur }
       }
     }
