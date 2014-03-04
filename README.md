@@ -1,7 +1,7 @@
 ﻿# ECMAScript 6
 
 ## Introduction
-ECMAScript 6 is the upcoming version of the ECMAScript standard.  This standard is targetting ratifcation in December 2014.  ES6 is a significant update to the language, and the first update to the language since ES5 was standardized in 2009.    Implementation of these features in major JavaScript engines is [underway now](http://kangax.github.io/es5-compat-table/es6/).  
+ECMAScript 6 is the upcoming version of the ECMAScript standard.  This standard is targeting ratification in December 2014.  ES6 is a significant update to the language, and the first update to the language since ES5 was standardized in 2009.    Implementation of these features in major JavaScript engines is [underway now](http://kangax.github.io/es5-compat-table/es6/).  
 
 See the [draft ES6 standard](https://people.mozilla.org/~jorendorff/es6-draft.html) for full specification of the ECMAScript 6 language.
 
@@ -56,7 +56,7 @@ var bob = {
 ```
 
 ### Classes
-ES6 classes are a simple sugar over prototype-based OO pattern.  Having a single convenient declarative form makes class patterns easier to use, and encourages interoperability.  Classes support protoype-based inheritance, super calls, instance and static methods and constructors.
+ES6 classes are a simple sugar over the prototype-based OO pattern.  Having a single convenient declarative form makes class patterns easier to use, and encourages interoperability.  Classes support protoype-based inheritance, super calls, instance and static methods and constructors.
 
 ```JavaScript
 class SkinnedMesh extends THREE.Mesh {
@@ -90,7 +90,7 @@ var obj = {
    // Methods
    toString() {
      // Super calls
-     return "d " + super.toString()
+     return "d " + super.toString();
    }
 };
 ```
@@ -343,7 +343,7 @@ Module loaders support:
 - Compilation hooks
 - Nested virtualization
 
-The default module loader can be configured, and new loaders can be consructed to evaluated and load code in isolated or constrained contexts.
+The default module loader can be configured, and new loaders can be constructed to evaluated and load code in isolated or constrained contexts.
 
 ```JavaScript
 // Dynamic loading – ‘System’ is default loader
@@ -355,11 +355,11 @@ System.import('lib/math').then(function(m) {
 var loader = new Loader({
   global: fixup(window) // replace ‘console.log’
 });
-loader.eval("console.log('hello world!');")
+loader.eval("console.log('hello world!');");
 
 // Directly manipulate module cache
-System.get('jquery')
-System.set('jquery', Module({$: $})) // WARNING: not yet finalized
+System.get('jquery');
+System.set('jquery', Module({$: $})); // WARNING: not yet finalized
 ```
 
 ### Map + Set + WeakMap + WeakSet
@@ -476,7 +476,7 @@ Object construction for a function named `Ctor` now uses two-phases (both virtua
 The known `@@create` symbol is available via `Symbol.create`.  Built-ins now expose their `@@create` explicitly.
 
 ```JavaScript
-// Psuedo-code of Array
+// Pseudo-code of Array
 class Array {
     constructor(...args) { /* ... */ }
     static [Symbol.create]() {
@@ -560,6 +560,6 @@ function factorial(n, acc = 1) {
 }
 
 // Stack overflow in most implementations today,
-// but safe on arbtrariy inputs in eS6
+// but safe on arbitrary inputs in eS6
 factorial(100000)
 ```
