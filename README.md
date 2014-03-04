@@ -415,7 +415,7 @@ p.world === 'Hello, world!';
 // Proxying a function object
 var target = function () { return 'I am the target'; };
 var handler = {
-  call: function (receiver, ...args) {
+  apply: function (receiver, ...args) {
     return 'I am the proxy';
   }
 };
