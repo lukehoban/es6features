@@ -149,13 +149,15 @@ function f(x, y=12) {
   return x + y;
 }
 f(3) == 15
-
+```
+```JavaScript
 function f(x, ...y) { 
   // y is an Array
-  return x * y.length;
+  return x + y.length;
 }
 f(3, "hello", true) == 5
-
+```
+```JavaScript
 function f(x, y, z) { 
   return x + y + z;
 }
