@@ -530,6 +530,13 @@ Array.of(1, 2, 3) // Similar to new Array(...), but without special one-arg beha
 Object.assign(Point, { origin: new Point(0,0)})
 ```
 
+### Binary and Octal Literals
+Two new numeric literal forms are addded for binary (b) and octal (o).
+
+```JavaScript
+0b111110111 === 0o767 === 503 === 0x1F7 
+```
+
 ### Promises
 Promises are a library for asynchronous programming.  Promises are a first class representation of a value that may be made available in the future.  Promises are used in many existing JavaScript libraries.
 
