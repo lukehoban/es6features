@@ -1,7 +1,7 @@
-﻿# ECMAScript 6
+# ECMAScript 6
 
 ## Introduction
-ECMAScript 6 is the upcoming version of the ECMAScript standard.  This standard is targeting ratification in December 2014.  ES6 is a significant update to the language, and the first update to the language since ES5 was standardized in 2009.    Implementation of these features in major JavaScript engines is [underway now](http://kangax.github.io/es5-compat-table/es6/).  
+ECMAScript 6 is the upcoming version of the ECMAScript standard.  This standard is targeting ratification in December 2014.  ES6 is a significant update to the language, and the first update to the language since ES5 was standardized in 2009.    Implementation of these features in major JavaScript engines is [underway now](http://kangax.github.io/es5-compat-table/es6/).
 
 See the [draft ES6 standard](https://people.mozilla.org/~jorendorff/es6-draft.html) for full specification of the ECMAScript 6 language.
 
@@ -28,7 +28,7 @@ ES6 includes the following new features:
 - [reflect api](#reflect-api)
 - [tail calls](#tail-calls)
 
-## ECMAScript 6 Features 
+## ECMAScript 6 Features
 
 ### Arrows
 Arrows are a function shorthand using the `=>` syntax.  They are syntactically similar to the related feature in C#, Java 8 and CoffeeScript.  They support both expression and statement bodies.  Unlike functions, arrows share the same lexical `this` as their surrounding code.
@@ -39,9 +39,9 @@ var odds = evens.map(v => v + 1);
 var nums = evens.map((v, i) => v + i);
 
 // Statement bodies
-nums.forEach(v => { 
-  if (v % 5 === 0) 
-    fives.push(v); 
+nums.forEach(v => {
+  if (v % 5 === 0)
+    fives.push(v);
 });
 
 // Lexical this
@@ -49,7 +49,7 @@ var bob = {
   _name: "Bob",
   _friends: [],
   printFriends() {
-    this._friends.forEach(f => 
+    this._friends.forEach(f =>
       console.log(this._name + " knows " + f));
   }
 }
@@ -62,7 +62,7 @@ ES6 classes are a simple sugar over the prototype-based OO pattern.  Having a si
 class SkinnedMesh extends THREE.Mesh {
   constructor(geometry, materials) {
     super(geometry, materials);
- 
+
     this.idMatrix = SkinnedMesh.defaultMatrix();
     this.bones = [];
     this.boneMatrices = [];
@@ -86,7 +86,7 @@ var obj = {
    // __proto__
    __proto__: theProtoObj,
    // Shorthand for ‘handler: handler’
-   handler, 
+   handler,
    // Methods
    toString() {
      // Super calls
@@ -100,13 +100,13 @@ Template strings provide syntactic sugar for constructing strings.  This is simi
 
 ```JavaScript
 // Basic literal string creation
-`In JavaScript '\n' is a line-feed.` 
+`In JavaScript '\n' is a line-feed.`
 
 // Multiline strings
 `In JavaScript this is
- not legal.` 
+ not legal.`
 
-// Construct a DOM query 
+// Construct a DOM query
 var name = "Bob", time = "today";
 `Hello ${name}, how are you ${time}?`
 
@@ -115,7 +115,7 @@ GET`http://foo.org/bar?a=${a}&b=${b}
     Content-Type: application/json
     X-Credentials: ${credentials}
     { "foo": ${foo},
-      "bar": ${bar}}`(myOnReadyStateChangeHandler); 
+      "bar": ${bar}}`(myOnReadyStateChangeHandler);
 ```
 
 ### Destructuring
@@ -126,7 +126,7 @@ Destructuring allows binding using pattern matching, with support for matching a
 var [a, , b] = [1,2,3];
 
 // object matching
-var { op: a, lhs: { op: b }, rhs: c } 
+var { op: a, lhs: { op: b }, rhs: c }
        = getASTNode()
 
 // object matching shorthand
@@ -148,28 +148,28 @@ a === undefined;
 Callee-evaluated default parameter values.  Turn an array into consecutive arguments in a function call.  Bind trailing parameters to an array.  Rest replaces the need for `arguments` and addresses common cases more directly.
 
 ```JavaScript
-function f(x, y=12) { 
+function f(x, y=12) {
   // y is 12 if not passed (or passed as undefined)
   return x + y;
 }
 f(3) == 15
 ```
 ```JavaScript
-function f(x, ...y) { 
+function f(x, ...y) {
   // y is an Array
   return x * y.length;
 }
 f(3, "hello", true) == 6
 ```
 ```JavaScript
-function f(x, y, z) { 
+function f(x, y, z) {
   return x + y + z;
 }
 // Pass each elem of array as argument
 f(...[1,2,3]) == 6
 ```
 
-### Let + Const 
+### Let + Const
 Block-scoped binding constructs.  `let` is the new `var`.  `const` is single-assignment.  Static restrictions prevent use before assignment.
 
 
@@ -179,12 +179,12 @@ function f() {
     let x;
     {
       // okay, block scoped name
-      const x = "sneaky"; 
+      const x = "sneaky";
       // error, const
       x = "foo";
     }
     // error, already declared in block
-    let x = "inner"; 
+    let x = "inner";
   }
 }
 ```
@@ -215,15 +215,15 @@ for (var n of fibonacci) {
 
 Iteration is based on these duck-typed interfaces (using [TypeScript](http://typescriptlang.org) type syntax for exposition only):
 ```TypeScript
-interface IteratorResult { 
-  done: boolean; 
+interface IteratorResult {
+  done: boolean;
   value: any;
 }
-interface Iterator { 
-  next(): IteratorResult; 
+interface Iterator {
+  next(): IteratorResult;
 }
-interface Iterable { 
-  [Symbol.iterator](): Iterator 
+interface Iterable {
+  [Symbol.iterator](): Iterator
 }
 ```
 
@@ -263,20 +263,20 @@ interface Generator extends Iterator {
 ```
 
 ### Comprehensions
-Array and generator comprehensions provide simple declarative list processing similar as used in many functional programming patterns. 
+Array and generator comprehensions provide simple declarative list processing similar as used in many functional programming patterns.
 
 ```JavaScript
 // Array comprehensions
-var results = [ 
+var results = [
   for(c of customers)
-  if (c.city == "Seattle") 
+  if (c.city == "Seattle")
   { name: c.name, age: c.age }
 ]
 
 // Generator comprehensions
 var results = (
   for(c of customers)
-  if (c.city == "Seattle") 
+  if (c.city == "Seattle")
   { name: c.name, age: c.age }
 )
 ```
@@ -299,7 +299,7 @@ Non-breaking additions to support full Unicode, including new unicode literal fo
 
 // for-of iterates code points
 for(var c of "𠮷") {
-  console.log(c); 
+  console.log(c);
 }
 ```
 
@@ -313,7 +313,7 @@ export function sum(x, y) {
 }
 export var pi = 3.141593;
 ```
-```JavaScript 
+```JavaScript
 // app.js
 module math from "lib/math";
 alert("2π = " + math.sum(math.pi, math.pi));
@@ -353,8 +353,8 @@ The default module loader can be configured, and new loaders can be constructed 
 
 ```JavaScript
 // Dynamic loading – ‘System’ is default loader
-System.import('lib/math').then(function(m) { 
-  alert("2π = " + m.sum(m.pi, m.pi)); 
+System.import('lib/math').then(function(m) {
+  alert("2π = " + m.sum(m.pi, m.pi));
 });
 
 // Create execution sandboxes – new Loaders
@@ -369,7 +369,7 @@ System.set('jquery', Module({$: $})); // WARNING: not yet finalized
 ```
 
 ### Map + Set + WeakMap + WeakSet
-Efficient data structures for common algorithms.  WeakMaps provides leak-free object-key’d side tables.  
+Efficient data structures for common algorithms.  WeakMaps provides leak-free object-key’d side tables.
 
 ```JavaScript
 // Sets
@@ -401,8 +401,8 @@ Proxies enable creation of objects with the full range of behaviors available to
 ```JavaScript
 // Proxying a normal object
 var target = {};
-var handler = {  
-  get: function (receiver, name) {    
+var handler = {
+  get: function (receiver, name) {
     return `Hello, ${name}!`;
   }
 };
@@ -427,21 +427,21 @@ p() === 'I am the proxy';
 There are traps available for all of the runtime-level meta-operations:
 
 ```JavaScript
-var handler = 
+var handler =
 {
   get:...,
   set:...,
   has:...,
   deleteProperty:...,
-  apply:..., 
+  apply:...,
   construct:...,
-  getOwnPropertyDescripto:...r, 
+  getOwnPropertyDescripto:...r,
   defineProperty:...,
-  getPrototypeOf:..., 
+  getPrototypeOf:...,
   setPrototypeOf:...,
-  enumerate:..., 
+  enumerate:...,
   ownKeys:...,
-  preventExtensions:..., 
+  preventExtensions:...,
   isExtensible:...
 }
 ```
@@ -452,28 +452,28 @@ Symbols enable access control for object state.  Symbols allow properties to be 
 
 ```JavaScript
 (function() {
-  
+
   // module scoped symbol
   var key = Symbol("key");
 
   function MyClass(privateData) {
-    this[key] = privateData; 
+    this[key] = privateData;
   }
 
-  MyClass.prototype = { 
-    doStuff: function() { 
-      ... this[key] ... 
-    } 
+  MyClass.prototype = {
+    doStuff: function() {
+      ... this[key] ...
+    }
   };
 
 })();
 
-var c = new MyClass("hello") 
+var c = new MyClass("hello")
 c["key"] === undefined
 ```
 
 ### Subclassable Built-ins
-In ES6, built-ins like `Array`, `Date` and DOM `Element`s can be subclassed.  
+In ES6, built-ins like `Array`, `Date` and DOM `Element`s can be subclassed.
 
 Object construction for a function named `Ctor` now uses two-phases (both virtually dispatched):
 - Call `Ctor[@@create]` to allocate the object, installing any special behavior
@@ -501,7 +501,7 @@ class MyArray extends Array {
 // 2) Invoke constructor on new instance
 var arr = new MyArray();
 arr[1] = 12;
-arr.length == 2 
+arr.length == 2
 ```
 
 ### Math + Number + String + Object APIs
@@ -531,10 +531,12 @@ Object.assign(Point, { origin: new Point(0,0)})
 ```
 
 ### Binary and Octal Literals
-Two new numeric literal forms are addded for binary (b) and octal (o).
+Two new numeric literal forms are addded for binary (`b`) and octal (`o`).
 
 ```JavaScript
-0b111110111 === 0o767 === 503 === 0x1F7 
+0b111110111 === 503 // true
+0o767 === 503 // true
+0x1F7 === 503 // true
 ```
 
 ### Promises
@@ -564,7 +566,7 @@ Full reflection API exposing the runtime-level meta-operations on objects.  This
 ```
 
 ### Tail Calls
-Calls in tail-position are guaranteed to not grow the stack unboundedly.  Makes recursive algorithms safe in the face of unbounded inputs.  
+Calls in tail-position are guaranteed to not grow the stack unboundedly.  Makes recursive algorithms safe in the face of unbounded inputs.
 
 ```JavaScript
 function factorial(n, acc = 1) {
