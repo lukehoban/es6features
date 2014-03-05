@@ -25,6 +25,7 @@ ES6 includes the following new features:
 - [subclassable built-ins](#subclassable-built-ins)
 - [promises](#promises)
 - [math + number + string + object APIs](#math--number--string--object-apis)
+- [binary and octal literals](#binary-and-octal-literals)
 - [reflect api](#reflect-api)
 - [tail calls](#tail-calls)
 
