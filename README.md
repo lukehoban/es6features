@@ -270,15 +270,15 @@ Array and generator comprehensions provide simple declarative list processing si
 // Array comprehensions
 var results = [
   for(c of customers)
-  if (c.city == "Seattle")
-  { name: c.name, age: c.age }
+    if (c.city == "Seattle")
+      { name: c.name, age: c.age }
 ]
 
 // Generator comprehensions
 var results = (
   for(c of customers)
-  if (c.city == "Seattle")
-  { name: c.name, age: c.age }
+    if (c.city == "Seattle")
+      { name: c.name, age: c.age }
 )
 ```
 
@@ -436,7 +436,7 @@ var handler =
   deleteProperty:...,
   apply:...,
   construct:...,
-  getOwnPropertyDescripto:...r,
+  getOwnPropertyDescriptor:...,
   defineProperty:...,
   getPrototypeOf:...,
   setPrototypeOf:...,
@@ -506,7 +506,7 @@ arr.length == 2
 ```
 
 ### Math + Number + String + Object APIs
-Many newlibrary additions, including core Math libraries, Array conversion helpers, and Object.assign for copying.
+Many new library additions, including core Math libraries, Array conversion helpers, and Object.assign for copying.
 
 ```JavaScript
 Number.EPSILON
@@ -528,7 +528,7 @@ Array.of(1, 2, 3) // Similar to new Array(...), but without special one-arg beha
 ["a", "b", "c"].keys() // iterator 0, 1, 2
 ["a", "b", "c"].values() // iterator "a", "b", "c"
 
-Object.assign(Point, { origin: new Point(0,0)})
+Object.assign(Point, { origin: new Point(0,0) })
 ```
 
 ### Binary and Octal Literals
