@@ -18,7 +18,7 @@ ES6 includes the following new features:
 - [comprehensions](#comprehensions)
 - [unicode](#unicode)
 - [modules](#modules)
-- [module loaders](#modules-loaders)
+- [module loaders](#module-loaders)
 - [map + set + weakmap + weakset](#map--set--weakmap--weakset)
 - [proxies](#proxies)
 - [symbols](#symbols)
