@@ -145,6 +145,10 @@ g({name: 5})
 // Fail-soft destructuring
 var [a] = [];
 a === undefined;
+
+// Fail-soft destructuring with defaults
+var [a = 1] = [];
+a === 1;
 ```
 
 ### Default + Rest + Spread
