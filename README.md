@@ -15,7 +15,6 @@ ES6 includes the following new features:
 - [let + const](#let--const)
 - [iterators + for..of](#iterators--forof)
 - [generators](#generators)
-- [comprehensions](#comprehensions)
 - [unicode](#unicode)
 - [modules](#modules)
 - [module loaders](#module-loaders)
@@ -267,25 +266,6 @@ interface Generator extends Iterator {
     next(value?: any): IteratorResult;
     throw(exception: any);
 }
-```
-
-### Comprehensions
-Array and generator comprehensions provide simple declarative list processing similar as used in many functional programming patterns.
-
-```JavaScript
-// Array comprehensions
-var results = [
-  for(c of customers)
-    if (c.city == "Seattle")
-      { name: c.name, age: c.age }
-]
-
-// Generator comprehensions
-var results = (
-  for(c of customers)
-    if (c.city == "Seattle")
-      { name: c.name, age: c.age }
-)
 ```
 
 ### Unicode
