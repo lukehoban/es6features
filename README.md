@@ -335,7 +335,7 @@ Module loaders support:
 - Compilation hooks
 - Nested virtualization
 
-The default module loader can be configured, and new loaders can be constructed to evaluated and load code in isolated or constrained contexts.
+The default module loader can be configured, and new loaders can be constructed to evaluate and load code in isolated or constrained contexts.
 
 ```JavaScript
 // Dynamic loading – ‘System’ is default loader
