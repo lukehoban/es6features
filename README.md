@@ -109,7 +109,7 @@ Template strings provide syntactic sugar for constructing strings.  This is simi
 `In JavaScript this is
  not legal.`
 
-// Construct a DOM query
+// String interpolation
 var name = "Bob", time = "today";
 `Hello ${name}, how are you ${time}?`
 
