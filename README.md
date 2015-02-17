@@ -504,7 +504,7 @@ Math.acosh(3) // 1.762747174039086
 Math.hypot(3, 4) // 5
 Math.imul(Math.pow(2, 32) - 1, Math.pow(2, 32) - 2) // 2
 
-"abcde".contains("cd") // true
+"abcde".includes("cd") // true
 "abc".repeat(3) // "abcabcabc"
 
 Array.from(document.querySelectorAll('*')) // Returns a real Array
