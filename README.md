@@ -437,7 +437,7 @@ Symbols enable access control for object state.  Symbols allow properties to be 
 
 
 ```JavaScript
-(function() {
+var MyClass = (function() {
 
   // module scoped symbol
   var key = Symbol("key");
@@ -452,6 +452,7 @@ Symbols enable access control for object state.  Symbols allow properties to be 
     }
   };
 
+  return MyClass;
 })();
 
 var c = new MyClass("hello")
