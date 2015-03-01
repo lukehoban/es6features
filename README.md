@@ -1,13 +1,12 @@
 # ECMAScript 6 <sup>[git.io/es6features](http://git.io/es6features)</sup>
 
 ## Introduction
-ECMAScript 6 is the upcoming version of the ECMAScript standard.  This standard is targeting ratification in June 2015.  ES6 is a significant update to the language, and the first update to the language since ES5 was standardized in 2009. Implementation of these features in major JavaScript engines is [underway now](http://kangax.github.io/es5-compat-table/es6/).
-
-See the [draft ES6 standard](https://people.mozilla.org/~jorendorff/es6-draft.html) for full specification of the ECMAScript 6 language.
+ECMAScript 6 是 ECMAScript 的下一代标准，预计将在 2015年6月 正式发布。ES6 的发布将是是这门语言自 2009 年 ES5 正式发布以来的首次更新，是一次富有意义的更新。Javascript核心引擎的[新特性](http://kangax.github.io/es5-compat-table/es6/)仍然在快速开发中，具体特性如下：
+这里有[ES6标准草案](https://people.mozilla.org/~jorendorff/es6-draft.html)的所有细节可以参考
 
 ES6 includes the following new features:
-- [arrows](#arrows)
-- [classes](#classes)
+- [Arrows 箭头函数](#arrows)
+- [classes 类](#classes)
 - [enhanced object literals](#enhanced-object-literals)
 - [template strings](#template-strings)
 - [destructuring](#destructuring)
@@ -28,27 +27,27 @@ ES6 includes the following new features:
 - [reflect api](#reflect-api)
 - [tail calls](#tail-calls)
 
-## ECMAScript 6 Features
+## ECMAScript 6 特性
 
-### Arrows
-Arrows are a function shorthand using the `=>` syntax.  They are syntactically similar to the related feature in C#, Java 8 and CoffeeScript.  They support both expression and statement bodies.  Unlike functions, arrows share the same lexical `this` as their surrounding code.
+### Arrows 箭头函数
+箭头函数是形如`=>`的函数简写形式，在语法上与 C#、Java 8 和 CoffeScript 非常相似，它们同时支持表达式和语句体，与function定义的函数不同的是，箭头函数在上下文中共享相同的关键字`this`
 
 ```JavaScript
-// Expression bodies
+// 表达式
 var odds = evens.map(v => v + 1);
 var nums = evens.map((v, i) => v + i);
 var pairs = evens.map(v => ({even: v, odd: v + 1}));
 
-// Statement bodies
+// 语句体
 nums.forEach(v => {
   if (v % 5 === 0)
     fives.push(v);
 });
 
-// Lexical this
+// this 关键字
 var bob = {
   _name: "Bob",
-  _friends: [],
+  _friends: ["Amy", "Bob", "Cinne", "Dylan", "Ellen"],
   printFriends() {
     this._friends.forEach(f =>
       console.log(this._name + " knows " + f));
@@ -56,8 +55,8 @@ var bob = {
 }
 ```
 
-### Classes
-ES6 classes are a simple sugar over the prototype-based OO pattern.  Having a single convenient declarative form makes class patterns easier to use, and encourages interoperability.  Classes support prototype-based inheritance, super calls, instance and static methods and constructors.
+### Classes 类
+ES6 的类是基于原型的面向对象模式的一个简单的语法糖，它有一个简便的声明形式，并鼓励互操作性，这使得类模式更容易使用。class定义的类支持基于原型的继承、SuperCalls、实例和静态方法以及构造函数。
 
 ```JavaScript
 class SkinnedMesh extends THREE.Mesh {
@@ -79,8 +78,8 @@ class SkinnedMesh extends THREE.Mesh {
 }
 ```
 
-### Enhanced Object Literals
-Object literals are extended to support setting the prototype at construction, shorthand for `foo: foo` assignments, defining methods, making super calls, and computing property names with expressions.  Together, these also bring object literals and class declarations closer together, and let object-based design benefit from some of the same conveniences.
+### Enhanced Object Literals 增强的Object字面量
+Object字面量被扩展以支持构建的时候设置原型，简写为`foo: foo`的赋值形式、定义方法、调用Super Calls、计算表达式的属性名称。同时，这些也给Object字面量和类声明更紧密联系起来，使得基于对象的设计得益于同样的便利
 
 ```JavaScript
 var obj = {
@@ -98,22 +97,22 @@ var obj = {
 };
 ```
 
-### Template Strings
-Template strings provide syntactic sugar for constructing strings.  This is similar to string interpolation features in Perl, Python and more.  Optionally, a tag can be added to allow the string construction to be customized, avoiding injection attacks or constructing higher level data structures from string contents.
+### Template Strings 模板字符串
+模板字符串提供构造字符串的语法糖，这与Perl、Python等许多语言中的字符串插值功能非常相似，可选地，一个标签可以被添加以允许字符串构造可以被自定义，避免注入攻击或者从字符串内容构建更高层次的数据结构。
 
 ```JavaScript
-// Basic literal string creation
+// 基础字符串字面量的创建
 `In JavaScript '\n' is a line-feed.`
 
-// Multiline strings
+// 多行字符串
 `In JavaScript this is
  not legal.`
 
-// String interpolation
+// 字符串插值
 var name = "Bob", time = "today";
 `Hello ${name}, how are you ${time}?`
 
-// Construct an HTTP request prefix is used to interpret the replacements and construction
+// 构造一个HTTP请求前缀用来解释替换和构造
 GET`http://foo.org/bar?a=${a}&b=${b}
     Content-Type: application/json
     X-Credentials: ${credentials}
