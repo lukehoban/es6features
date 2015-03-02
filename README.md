@@ -1,4 +1,4 @@
-# ECMAScript 6 Features by Lukehoban 中文译版
+# ECMAScript 6 Features 中文译版
 
 第一次翻译 Ecmascript 相关文档，如果词不达意欢迎提 issue，我多多改进
 为保证理解的顺畅，我采用中英混排的方式进行译制，如有不解，请查看对应原文
@@ -11,9 +11,11 @@ ECMAScript 6 is the upcoming version of the ECMAScript standard. This standard i
 ECMAScript 6 是 ECMAScript 的下一代标准，预计将在 2015年6月 正式发布。ES6 的发布将是是这门语言自 2009 年 ES5 正式发布以来的首次更新，是一次富有意义的更新。Javascript核心引擎的[新特性](http://kangax.github.io/es5-compat-table/es6/)仍然在快速开发中。
 
 See the [draft ES6 standard](https://people.mozilla.org/~jorendorff/es6-draft.html) for full specification of the ECMAScript 6 language.
+
 这里有[ES6标准草案](https://people.mozilla.org/~jorendorff/es6-draft.html)的所有细节可以参考
 
 ES6 includes the following new features:
+
 ES6 的具体特性如下：
 
 - [Arrows 箭头函数](#arrows)
@@ -21,7 +23,7 @@ ES6 的具体特性如下：
 - [enhanced object literals 增强的对象字面量](#enhanced-object-literals)
 - [template strings 模板字符串](#template-strings)
 - [destructuring 解构](#destructuring)
-- [default + rest + spread 默认值+多余变量组合+变量伸展](#default--rest--spread)
+- [default + rest + spread 默认值+多余参数组合+参数伸展](#default--rest--spread)
 - [let + const let + const 操作符](#let--const)
 - [iterators + for..of 迭代器 + for...of](#iterators--forof)
 - [generators 生成器](#generators)
@@ -38,8 +40,7 @@ ES6 的具体特性如下：
 - [reflect api](#reflect-api)
 - [tail calls](#tail-calls)
 
-## ECMAScript 6 Features
-## ECMAScript 6 特性
+## ECMAScript 6 Features 特性
 
 ### Arrows 箭头函数
 Arrows are a function shorthand using the `=>` syntax. They are syntactically similar to the related feature in C#, Java 8 and CoffeeScript. They support both expression and statement bodies. Unlike functions, arrows share the same lexical this as their surrounding code.
@@ -191,14 +192,16 @@ var [a = 1] = [];
 a === 1;
 ```
 
-### Default + Rest + Spread  默认值+多余变量组合+变量伸展
+### Default + Rest + Spread  默认值+多余参数组合+参数伸展
 Callee-evaluated default parameter values.  Turn an array into consecutive arguments in a function call.  Bind trailing parameters to an array.  Rest replaces the need for `arguments` and addresses common cases more directly.
 
-// 本人英语烂，直译出来惨不忍睹，尝试意译一下，欢迎issue里给出直译参考（泪目
-// 1、首先，参数可以指定默认值
-// 2、其次，可以通过...运算符将尾随参数转换为一个数组
-// 3、最后，同样通过...运算符将作为参数的数组拆解为相应参数变量
-// 果真只能靠自己~早已被作者虐哭
+本人英语烂，直译出来惨不忍睹，尝试意译一下，欢迎issue里给出直译参考（泪目
+
+1 首先，参数可以指定默认值
+2 其次，可以通过...运算符将尾随参数转换为一个数组
+3 最后，同样通过...运算符将作为参数的数组拆解为相应参数变量
+
+果真只能靠自己~早已被作者虐哭
 
 ```JavaScript
 function f(x, y=12) {
