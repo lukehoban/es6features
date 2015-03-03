@@ -5,7 +5,7 @@
 
 语言进化到现阶段沉淀了许多成熟方案，例如接口，duck-typed，映射等等，还有许多不明觉厉的概念，每个语言都争相支持这些语言设计的新方案，所以 ES6 的一部分特性看起来很像 Go
 
-**本文档将与原作者的[文档](https://github.com/lukehoban/es6features)保持同步更新，欢迎关注**
+**本文档将与原作者的 [文档](https://github.com/lukehoban/es6features) 保持同步更新，欢迎关注**
 
 ## Introduction 简介
 ECMAScript 6 is the upcoming version of the ECMAScript standard. This standard is targeting ratification in June 2015. ES6 is a significant update to the language, and the first update to the language since ES5 was standardized in 2009. Implementation of these features in major JavaScript engines is [underway now](http://kangax.github.io/es5-compat-table/es6/).
