@@ -1,9 +1,11 @@
 # ECMAScript 6 Features 中文版
 
-第一遍粗译，如果词不达意欢迎提 issue
-为保证理解的顺畅，我采用中英混排的方式进行译制，如有不解，请查看对应原文
+第一遍粗译，词不达意，欢迎提 issue
+采用中英混排的方式进行译制，如有不解请查看对应原文
 
-翻译完之后最大的感受是，语言进化到现阶段沉淀了许多成熟的方案，例如，接口，duck-typed，映射等等，还有许多乍一看都不怎么了解的概念，每个语言都争相支持这些语言设计的新方案，所以 ES6 的一部分特性看起来很像 Go
+语言进化到现阶段沉淀了许多成熟方案，例如接口，duck-typed，映射等等，还有许多不明觉厉的概念，每个语言都争相支持这些语言设计的新方案，所以 ES6 的一部分特性看起来很像 Go
+
+*本文档将与原作者的[文档](https://github.com/lukehoban/es6features)保持同步更新，欢迎关注*
 
 ## Introduction 简介
 ECMAScript 6 is the upcoming version of the ECMAScript standard. This standard is targeting ratification in June 2015. ES6 is a significant update to the language, and the first update to the language since ES5 was standardized in 2009. Implementation of these features in major JavaScript engines is [underway now](http://kangax.github.io/es5-compat-table/es6/).
@@ -34,7 +36,7 @@ ES6 的具体特性如下：
 - [proxies 代理](#proxies-%E4%BB%A3%E7%90%86)
 - [symbols 符号](#symbols-%E7%AC%A6%E5%8F%B7)
 - [subclassable built-ins 可子类化内建对象](#subclassable-built-ins-%E5%8F%AF%E5%AD%90%E7%B1%BB%E5%8C%96%E7%9A%84%E5%86%85%E5%BB%BA%E5%AF%B9%E8%B1%A1)
-- [promises](#promises-%E5%AF%B9%E8%B1%A1)
+- [promises 对象](#promises-%E5%AF%B9%E8%B1%A1)
 - [math + number + string + object APIs](#math--number--string--object-apis-%E6%89%A9%E5%B1%95)
 - [binary and octal literals 二进制和八进制字面量](#binary-and-octal-literals-%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%92%8C%E5%85%AB%E8%BF%9B%E5%88%B6%E5%AD%97%E9%9D%A2%E9%87%8F)
 - [reflect api 反射API](#reflect-api-%E5%8F%8D%E5%B0%84api)
