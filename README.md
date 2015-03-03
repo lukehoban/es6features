@@ -1,9 +1,9 @@
-# ECMAScript 6 Features 中文译版
+# ECMAScript 6 Features 中文版
 
-第一次翻译 Ecmascript 相关文档，如果词不达意欢迎提 issue，我多多改进
+第一遍粗译，如果词不达意欢迎提 issue
 为保证理解的顺畅，我采用中英混排的方式进行译制，如有不解，请查看对应原文
 
-翻译完之后最大的感受是，语言进化到现阶段有了许多成熟的方案，例如，接口，duck-typed等，还有许多乍一看都不怎么了解的概念，各个语言都争相加入这些语言设计的新方案，所以 ES6 的一部分特性看起来跟 Go 真的蛮像的。
+翻译完之后最大的感受是，语言进化到现阶段沉淀了许多成熟的方案，例如，接口，duck-typed，映射等等，还有许多乍一看都不怎么了解的概念，每个语言都争相支持这些语言设计的新方案，所以 ES6 的一部分特性看起来很像 Go
 
 ## Introduction 简介
 ECMAScript 6 is the upcoming version of the ECMAScript standard. This standard is targeting ratification in June 2015. ES6 is a significant update to the language, and the first update to the language since ES5 was standardized in 2009. Implementation of these features in major JavaScript engines is [underway now](http://kangax.github.io/es5-compat-table/es6/).
@@ -27,18 +27,18 @@ ES6 的具体特性如下：
 - [let + const let + const 操作符](#let--const-%E6%93%8D%E4%BD%9C%E7%AC%A6)
 - [iterators + for..of 迭代器 + for...of](#iterators--forof-%E8%BF%AD%E4%BB%A3%E5%99%A8--forof-%E5%BE%AA%E7%8E%AF)
 - [generators 生成器](#generators-%E7%94%9F%E6%88%90%E5%99%A8)
-- [unicode](#unicode)
-- [modules](#modules)
-- [module loaders](#module-loaders)
-- [map + set + weakmap + weakset](#map--set--weakmap--weakset)
-- [proxies](#proxies)
-- [symbols](#symbols)
-- [subclassable built-ins](#subclassable-built-ins)
+- [unicode 统一码](#unicode)
+- [modules 模块](#modules-%E6%A8%A1%E5%9D%97)
+- [module loaders 模块加载器](#module-loaders-%E6%A8%A1%E5%9D%97%E5%8A%A0%E8%BD%BD%E5%99%A8)
+- [map + set + weakmap + weakset 数据结构](#map--set--weakmap--weakset)
+- [proxies 代理](#proxies-%E4%BB%A3%E7%90%86)
+- [symbols 符号](#symbols-%E7%AC%A6%E5%8F%B7)
+- [subclassable built-ins 可子类化内建对象](#subclassable-built-ins-%E5%8F%AF%E5%AD%90%E7%B1%BB%E5%8C%96%E7%9A%84%E5%86%85%E5%BB%BA%E5%AF%B9%E8%B1%A1)
 - [promises](#promises)
 - [math + number + string + object APIs](#math--number--string--object-apis)
-- [binary and octal literals](#binary-and-octal-literals)
-- [reflect api](#reflect-api)
-- [tail calls](#tail-calls)
+- [binary and octal literals 二进制和八进制字面量](#binary-and-octal-literals-%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%92%8C%E5%85%AB%E8%BF%9B%E5%88%B6%E5%AD%97%E9%9D%A2%E9%87%8F)
+- [reflect api 反射API](#reflect-api-%E5%8F%8D%E5%B0%84api)
+- [tail calls 尾调用](#tail-calls-%E5%B0%BE%E8%B0%83%E7%94%A8)
 
 ## ECMAScript 6 Features 特性
 
@@ -327,7 +327,7 @@ interface Generator extends Iterator {
 }
 ```
 
-### Unicode
+### Unicode 统一码
 Non-breaking additions to support full Unicode, including new Unicode literal form in strings and new RegExp `u` mode to handle code points, as well as new APIs to process strings at the 21bit code points level.  These additions support building global apps in JavaScript.
 
   > Non-breaking additions to support full Unicode
@@ -437,7 +437,7 @@ System.get('jquery');
 System.set('jquery', Module({$: $})); // WARNING: not yet finalized
 ```
 
-### Map + Set + WeakMap + WeakSet Map和Set数据结构+WeakMap+WeakSet
+### Map + Set + WeakMap + WeakSet 数据结构
 Efficient data structures for common algorithms.  WeakMaps provides leak-free object-key’d side tables.
 这些是对于一般算法来说效的数据结构，WeakMaps提供不会泄露的对象键(对象作为键名，而且键名指向对象)索引表
 注：所谓的不会泄露，指的是对应的对象可能会被自动回收，回收后WeakMaps自动移除对应的键值对，有助于防止内存泄露
@@ -597,7 +597,7 @@ arr[1] = 12;
 arr.length == 2
 ```
 
-### Math + Number + String + Object APIs Math+Number+String+Object扩展API
+### Math + Number + String + Object APIs 扩展
 Many new library additions, including core Math libraries, Array conversion helpers, and Object.assign for copying.
 
 新加入了许多库，包括核心数学库，进行数组转换的helper，用来拷贝的Object.assign
@@ -635,7 +635,7 @@ Two new numeric literal forms are added for binary (`b`) and octal (`o`).
 0o767 === 503 // true
 ```
 
-### Promises Promise对象
+### Promises 对象
 Promises are a library for asynchronous programming.  Promises are a first class representation of a value that may be made available in the future.  Promises are used in many existing JavaScript libraries.
 
 Promise是一个用来进行异步编程的库，Promise为未来可能产生的数值作先行呈现，Promise在许多已知的库中被使用。
