@@ -73,6 +73,12 @@ class SkinnedMesh extends THREE.Mesh {
     //...
     super.update();
   }
+  get boneCount() {
+    return this.bones.length;
+  }
+  set matrixType(matrixType) {
+    this.idMatrix = SkinnedMesh[matrixType]();
+  }
   static defaultMatrix() {
     return new THREE.Matrix4();
   }
