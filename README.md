@@ -246,22 +246,19 @@ Generators simplify iterator-authoring using `function*` and `yield`.  A functio
 
 Note: Can also be used to enable ‘await’-like async programming, see also ES7 `await` proposal.
 
-Basic usage
 ```JavaScript
+// Basic usage
 function* generatorFunction() {
   yield 1;
   yield 2;
 }
-```
-```JavaScript
+
 let genObj = generatorFunction();
 genObj.next() // { done: false, value: 1 }
 genObj.next() // { done: false, value: 2 }
 genObj.next() // { done: true }
-```
 
-Iterator authoring
-```JavaScript
+// Iterator authoring
 var fibonacci = {
   [Symbol.iterator]: function*() {
     var pre = 0, cur = 1;
@@ -273,40 +270,12 @@ var fibonacci = {
     }
   }
 }
-```
-```JavaScript
+
 for (var n of fibonacci) {
   // truncate the sequence at 1000
-  if (n > 1000)
-    break;
+  if (n > 1000) break;
   console.log(n);
 }
-```
-
-Generators also introduce a `yield*` for creating a recursive Iterator
-```JavaScript
-function* iterTree(tree) {
-  if (Array.isArray(tree)) {
-    // inner node
-    for(let i=0; i < tree.length; i++) {
-      yield* iterTree(tree[i]); // (*) recursion
-    }
-  } else {
-    // leaf
-    yield tree;
-  }
-}
-```
-```JavaScript
-const tree = [ 'a', ['b', 'c'], ['d', 'e'] ];
-for(let x of iterTree(tree)) {
-  console.log(x);
-}
-// a
-// b
-// c
-// d
-// e
 ```
 
 The generator interface is (using [TypeScript](http://typescriptlang.org) type syntax for exposition only):
