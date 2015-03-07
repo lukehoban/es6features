@@ -166,6 +166,7 @@ function f(x, y=12) {
   return x + y;
 }
 f(3) == 15
+f(3,6) == 9
 ```
 ```JavaScript
 function f(x, ...y) {
@@ -245,11 +246,26 @@ Generators simplify iterator-authoring using `function*` and `yield`.  A functio
 
 Note: Can also be used to enable ‘await’-like async programming, see also ES7 `await` proposal.
 
+Basic usage
+```JavaScript
+function* generatorFunction() {
+  yield 1;
+  yield 2;
+}
+```
+```JavaScript
+let genObj = generatorFunction();
+genObj.next() // { done: false, value: 1 }
+genObj.next() // { done: false, value: 2 }
+genObj.next() // { done: true }
+```
+
+Iterator authoring
 ```JavaScript
 var fibonacci = {
   [Symbol.iterator]: function*() {
     var pre = 0, cur = 1;
-    for (;;) {
+    while (true) {
       var temp = pre;
       pre = cur;
       cur += temp;
@@ -257,13 +273,40 @@ var fibonacci = {
     }
   }
 }
-
+```
+```JavaScript
 for (var n of fibonacci) {
   // truncate the sequence at 1000
   if (n > 1000)
     break;
   console.log(n);
 }
+```
+
+Generators also introduce a `yield*` for creating a recursive Iterator
+```JavaScript
+function* iterTree(tree) {
+  if (Array.isArray(tree)) {
+    // inner node
+    for(let i=0; i < tree.length; i++) {
+      yield* iterTree(tree[i]); // (*) recursion
+    }
+  } else {
+    // leaf
+    yield tree;
+  }
+}
+```
+```JavaScript
+const tree = [ 'a', ['b', 'c'], ['d', 'e'] ];
+for(let x of iterTree(tree)) {
+  console.log(x);
+}
+// a
+// b
+// c
+// d
+// e
 ```
 
 The generator interface is (using [TypeScript](http://typescriptlang.org) type syntax for exposition only):
