@@ -325,13 +325,13 @@ Some additional features include `export default` and `export *`:
 export * from "lib/math";
 export var e = 2.71828182846;
 export default function(x) {
-    return Math.exp(x);
+    return Math.log(x);
 }
 ```
 ```JavaScript
 // app.js
-import exp, {pi, e} from "lib/mathplusplus";
-alert("2π = " + exp(pi, e));
+import ln, {pi, e} from "lib/mathplusplus";
+alert("2π = " + ln(e)*pi*2);
 ```
 
 ### Module Loaders
