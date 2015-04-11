@@ -23,7 +23,7 @@ ES6 includes the following new features:
 - [symbols](#symbols)
 - [subclassable built-ins](#subclassable-built-ins)
 - [promises](#promises)
-- [math + number + string + object APIs](#math--number--string--object-apis)
+- [math + number + string + array + object APIs](#math--number--string--array--object-apis)
 - [binary and octal literals](#binary-and-octal-literals)
 - [reflect api](#reflect-api)
 - [tail calls](#tail-calls)
@@ -498,8 +498,8 @@ arr[1] = 12;
 arr.length == 2
 ```
 
-### Math + Number + String + Object APIs
-Many new library additions, including core Math libraries, Array conversion helpers, and Object.assign for copying.
+### Math + Number + String + Array + Object APIs
+Many new library additions, including core Math libraries, Array conversion helpers, String helpers, and Object.assign for copying.
 
 ```JavaScript
 Number.EPSILON
@@ -518,6 +518,7 @@ Array.of(1, 2, 3) // Similar to new Array(...), but without special one-arg beha
 [0, 0, 0].fill(7, 1) // [0,7,7]
 [1, 2, 3].find(x => x == 3) // 3
 [1, 2, 3].findIndex(x => x == 2) // 1
+[1,2,3,4,5].copyWithin(3, 0) // [1,2,3,1,2]
 ["a", "b", "c"].entries() // iterator [0, "a"], [1,"b"], [2,"c"]
 ["a", "b", "c"].keys() // iterator 0, 1, 2
 ["a", "b", "c"].values() // iterator "a", "b", "c"
