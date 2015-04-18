@@ -393,25 +393,25 @@ Proxies enable creation of objects with the full range of behaviors available to
 
 ```JavaScript
 // Proxying a normal object
-var target = {};
-var handler = {
-  get: function (receiver, name) {
+var target = {};
+var handler = {
+  get: function (receiver, name) {
     return `Hello, ${name}!`;
-  }
-};
+  }
+};
 
-var p = new Proxy(target, handler);
+var p = new Proxy(target, handler);
 p.world === 'Hello, world!';
 ```
 
 ```JavaScript
 // Proxying a function object
-var target = function () { return 'I am the target'; };
+var target = function () { return 'I am the target'; };
 var handler = {
   apply: function (receiver, ...args) {
     return 'I am the proxy';
-  }
-};
+  }
+};
 
 var p = new Proxy(target, handler);
 p() === 'I am the proxy';
