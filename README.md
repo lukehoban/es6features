@@ -247,7 +247,7 @@ Note: Can also be used to enable ‘await’-like async programming, see also ES
 
 ```JavaScript
 var fibonacci = {
-  [Symbol.iterator]: function*() {
+  [Symbol.iterator]: function() {
     var pre = 0, cur = 1;
     for (;;) {
       var temp = pre;
