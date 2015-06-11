@@ -132,7 +132,7 @@ Destructuring allows binding using pattern matching, with support for matching a
 
 ```JavaScript
 // list matching
-var [a, , b] = [1,2,3];
+var [a, b, c] = [1, 2, 3];
 
 // object matching
 var { op: a, lhs: { op: b }, rhs: c }
