@@ -104,22 +104,22 @@ var obj = {
 };
 ```
 
-### Template Strings
-Template strings provide syntactic sugar for constructing strings.  This is similar to string interpolation features in Perl, Python and more.  Optionally, a tag can be added to allow the string construction to be customized, avoiding injection attacks or constructing higher level data structures from string contents.
+### Πρότυπα συμβολοσειρών (template strings)
+Τα πρότυπα συμβολοσειρών παρέχουν συντακτική ζάχαρη στην δημιουργία συμβολοσειρών. Αυτό είναι παρόμοιο με το χαρακτηριστικό παρεμβολής συμβολοσειρών στην Perl,  την Python και άλλα. Προαιρετικά, μια ετικέτα μπορεί να προστεθεί για να επιτρέψει την δημιουργία της συμβολοσειράς να προσαρμοστεί, αποφεύγοντας τις επιθέσεις ένεσης ή την δημιουργία υψηλότερου επιπέδου δομών δεδομένων από περιεχόμενο συμβολοσειρών.
 
 ```JavaScript
-// Basic literal string creation
+// Βασική δημιουργία συμβολοσειράς
 `In JavaScript '\n' is a line-feed.`
 
-// Multiline strings
+// Συμβολοσειρά πολλαπλών γραμμών
 `In JavaScript this is
  not legal.`
 
-// String interpolation
+// Παρέμβαση συμβολοσειράς
 var name = "Bob", time = "today";
 `Hello ${name}, how are you ${time}?`
 
-// Construct an HTTP request prefix is used to interpret the replacements and construction
+// Δόμηση ενός HTTP request prefix που χρησιμοποιείται για να ερμηνεύσει τις αντικαταστάσεις και την κατασκευή
 GET`http://foo.org/bar?a=${a}&b=${b}
     Content-Type: application/json
     X-Credentials: ${credentials}
