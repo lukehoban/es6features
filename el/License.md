@@ -1,21 +1,22 @@
 The MIT License (MIT)
 
-Copyright (c) 2014 Luke Hoban
+Πνευματικά δικαιώματα (c) 2014 Luke Hoban
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+Η άδεια αυτή χορηγείται, χωρίς χρέωση, σε οποιοδήποτε άτομο αποκτά ένα αντίγραφο
+αυτού του λογισμικού και των σχετικών αρχείων τεκμηρίωσης (το "Λογισμικό"), για να
+χειριστεί το Λογισμικό χωρίς περιορισμούς, συμπερλιμανομένων και των χωρίς περιορισμό 
+δικαιωμάτων για χρήση, αντιγραφή, αλλαγή, συνένωση, δημοσίευση, διάθεση, νέα αδειοδότηση,
+και/ή πώληση αντιγράφων του Λογισμικού, και να επιτρέπει στο άτομο που θα λάβει το Λογισμικό
+να πράξει ομοίως, υπό τις ακόλουθες προϋποθέσεις:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+Τα παραπάνω πνευματικά δικαιώματα και αυτή η αναφορά στην άδεια θα πρέπει να συμπεριλαμβάνεται
+σε όλα τα αντίγραφα ή σε σημαντικά τμήματα του Λογισμικού.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+
+ΤΟ ΛΟΓΙΣΜΙΚΟ ΠΑΡΕΧΕΤΑΙ "ΩΣ ΕΧΕΙ", ΧΩΡΙΣ ΚΑΝΕΝΟΣ ΕΙΔΟΥΣ ΕΓΓΥΗΣΗ, ΡΗΤΗ Ή
+ΣΙΩΠΗΡΗ, ΣΥΜΠΕΡΙΛΑΜΒΑΝΟΜΕΝΩΝ ΕΝΔΕΙΚΤΙΚΑ ΤΩΝ ΕΓΓΥΗΣΕΩΝ ΕΜΠΟΡΕΥΣΙΜΟΤΗΤΑΣ,
+ΚΑΤΑΛΛΗΛΟΤΗΤΑΣ ΓΙΑ ΕΝΑ ΣΥΓΚΕΚΡΙΜΕΝΟ ΣΚΟΠΟ ΚΑΙ ΜΗ ΠΑΡΑΒΙΑΣΗΣ. ΣΕ ΚΑΜΙΑ ΠΕΡΙΠΤΩΣΗ Η 
+ΣΥΝΤΑΚΤΕΣ Ή ΟΙ ΚΑΤΟΧΟΙ ΠΝΕΥΜΑΤΙΚΩΝ ΔΙΚΑΙΩΜΑΤΩΝ ΔΕΝ ΘΑ ΦΕΡΟΥΝ ΚΑΜΙΑ ΕΥΘΥΝΗ ΓΙΑ ΟΠΟΙΑΔΗΠΟΤΕ ΑΞΙΩΣΗ, ΖΗΜΙΑ Ή ΑΛΛΗ
+ΕΥΘΥΝΗ, ΕΙΤΕ ΣΤΑ ΠΛΑΙΣΙΑ ΤΗΣ ΣΥΜΒΑΣΗΣ, ΑΔΙΚΗΜΑ Ή ΑΛΛΩΣ, ΠΟΥ ΠΡΟΚΥΠΤΕΙ,
+ΑΠΟ Ή ΣΕ ΣΧΕΣΗ ΜΕ ΤΟ ΛΟΓΙΣΜΙΚΟ Ή ΤΗ ΧΡΗΣΗ Ή ΑΛΛΗ ΣΥΜΠΕΡΙΦΟΡΑ ΠΟΥ ΑΦΟΡΑ ΤΟ
+ΛΟΓΙΣΜΙΚΟΥ.
