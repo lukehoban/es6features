@@ -28,24 +28,24 @@
 - [API ανάκλασης (reflect api)](#reflect-api)
 - [κλήσεις ουράς (tail calls)](#tail-calls)
 
-## ECMAScript 6 Features
+## Χαρακτηριστικά της ECMAScript 6
 
-### Arrows
-Arrows are a function shorthand using the `=>` syntax.  They are syntactically similar to the related feature in C#, Java 8 and CoffeeScript.  They support both statement block bodies as well as expression bodies which return the value of the expression.  Unlike functions, arrows share the same lexical `this` as their surrounding code.
+### Βέλη (arrow)
+Τα βέλη είναι συντομογραφίες συναρτήσεων που χρησιμοποιούν το συντακτικό `=>`. Είναι συντακτικά όμοια των σχετικών χαρακτηριστικών στην C#, Java 8 και της CoffeeScript. Υποστηρίζουν τόσο δηλώσεις κορμού σε πλαίσιο όσο και δηλώσεις κορμού οι οποίες επιστρέφουν την τιμή της δήλωσης. Αντίθετα από τις συναρτήσεις, τα βέλη μοιράζονται το ίδιο λεξιλογικό `this` με αυτό του κώδικα που τα πλαισιώνει.  
 
 ```JavaScript
-// Expression bodies
+// Κορμοί δήλωσης
 var odds = evens.map(v => v + 1);
 var nums = evens.map((v, i) => v + i);
 var pairs = evens.map(v => ({even: v, odd: v + 1}));
 
-// Statement bodies
+// Κορμοί δήλωσης
 nums.forEach(v => {
   if (v % 5 === 0)
     fives.push(v);
 });
 
-// Lexical this
+// Λεξιλογικό this
 var bob = {
   _name: "Bob",
   _friends: [],
