@@ -56,8 +56,8 @@ var bob = {
 }
 ```
 
-### Classes
-ES6 classes are a simple sugar over the prototype-based OO pattern.  Having a single convenient declarative form makes class patterns easier to use, and encourages interoperability.  Classes support prototype-based inheritance, super calls, instance and static methods and constructors.
+### Κλάσεις (Classes)
+Η κλάσεις στην ES6, είναι απλή ζάχαρη πάνω από τα βασισμένα σε prototypes αντικειμενοστρεφή πρότυπα. Η ύπαρξη μιας ενιαίας βολικής μορφής δήλωσης, κάνει τα πρότυπα κλάσεων ποιο εύκολα στην χρήση, και προτρέπουν την διαλειτουργικότητα. Οι κλάσεις υποστηρίζουν κληρονομικότητα βασισμένη στα prototypes, κλήσεις super, στιγμιότυπα, στατικές μεθόδους και δημιουργούς.
 
 ```JavaScript
 class SkinnedMesh extends THREE.Mesh {
