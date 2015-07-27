@@ -1,32 +1,32 @@
 # ECMAScript 6 <sup>[git.io/es6features](http://git.io/es6features)</sup>
 
-## Introduction
-ECMAScript 6, also known as ECMAScript 2015, is the latest version of the ECMAScript standard.  ES6 is a significant update to the language, and the first update to the language since ES5 was standardized in 2009. Implementation of these features in major JavaScript engines is [underway now](http://kangax.github.io/es5-compat-table/es6/).
+## Εισαγωγή
+Η ECMAScript 6, επίσης γνωστή και ως ECMAScript 2015, είναι η ποιο πρόσφατη έκδοση του προτύπου ECMAScript. Η ES6 αποτελεί μια σημαντική αναβάθμιση της γλώσσας, και η πρώτη αναβάθμιση στην γλώσσα από την ES5 τυποποιήθηκε το 2009. Υλοποίηση αυτών των χαρακτηριστικών στις σημαντικές μηχανές JavaScript είναι [τώρα σε εξέλιξη](http://kangax.github.io/es5-compat-table/es6/).
 
-See the [ES6 standard](http://www.ecma-international.org/ecma-262/6.0/) for full specification of the ECMAScript 6 language.
+Δείτε το [πρότυπο ES6](http://www.ecma-international.org/ecma-262/6.0/) για πλήρη αναφορά στις προδιαγραφές της γλώσσας ECMAScript 6.
 
-ES6 includes the following new features:
-- [arrows](#arrows)
-- [classes](#classes)
-- [enhanced object literals](#enhanced-object-literals)
-- [template strings](#template-strings)
-- [destructuring](#destructuring)
+Η ES6 περιλαμβάνει τα ακόλουθα νέα χαρακτηριστικά:
+- [βέλη (arrows)](#arrows)
+- [κλάσεις (classes)](#classes)
+- [βελτιομένα κυριολεκτικά αντικειμένων (enhanced object literals)](#enhanced-object-literals)
+- [πρότυπα συμβολοσειρών (template strings)](#template-strings)
+- [αποδόμηση (destructuring)](#destructuring)
 - [default + rest + spread](#default--rest--spread)
 - [let + const](#let--const)
-- [iterators + for..of](#iterators--forof)
-- [generators](#generators)
+- [επαναλήπτες + for..of (iterators + for..of)](#iterators--forof)
+- [γεννήτριες (generators)](#generators)
 - [unicode](#unicode)
-- [modules](#modules)
-- [module loaders](#module-loaders)
+- [μονάδες (modules)](#modules)
+- [φορτωτές μονάδων (module loaders)](#module-loaders)
 - [map + set + weakmap + weakset](#map--set--weakmap--weakset)
 - [proxies](#proxies)
-- [symbols](#symbols)
+- [σύμβολα (symbols)](#symbols)
 - [subclassable built-ins](#subclassable-built-ins)
-- [promises](#promises)
-- [math + number + string + array + object APIs](#math--number--string--array--object-apis)
-- [binary and octal literals](#binary-and-octal-literals)
-- [reflect api](#reflect-api)
-- [tail calls](#tail-calls)
+- [υποσχέσεις (promises)](#promises)
+- [APIs για μαθηματικά + αριθμούς + συμβολοσειρές + πίνακες + αντικείμενα (math + number + string + array + object APIs)](#math--number--string--array--object-apis)
+- [κυριολεκτικά δυαδικών και οκταδικών (binary and octal literals)](#binary-and-octal-literals)
+- [API ανάκλασης (reflect api)](#reflect-api)
+- [κλήσεις ουράς (tail calls)](#tail-calls)
 
 ## ECMAScript 6 Features
 
