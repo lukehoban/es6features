@@ -85,21 +85,21 @@ class SkinnedMesh extends THREE.Mesh {
 }
 ```
 
-### Enhanced Object Literals
-Object literals are extended to support setting the prototype at construction, shorthand for `foo: foo` assignments, defining methods, making super calls, and computing property names with expressions.  Together, these also bring object literals and class declarations closer together, and let object-based design benefit from some of the same conveniences.
+### Βελτιομένα κυριολεκτικά αντικειμένων (enhanced object literals)
+Τα κυριολεκτικά αντικειμένων έχουν επεκταθεί ώστε να υποστηρίζουν την ρύθμιση του prototype κατά την δημιουργία, συντομεύσεις για αναθέσεις `foo: foo`, ορισμούς μεθόδων, κλήσεις super, και υπολογισμό ονομάτων ιδιοτήτων με εκφράσεις. Μαζί, αυτά επίσης φέρνουν κυριολεκτικά αντικείμενα και δηλώσεις κλάσεων ποιο κοντά μαζί, και επιτρέπουν τα πλεονεκτήματα του βασισμένου σε αντικείμενα σχεδιασμού μερικές από τις ίδιες ανέσεις.
 
 ```JavaScript
 var obj = {
     // __proto__
     __proto__: theProtoObj,
-    // Shorthand for ‘handler: handler’
+    // Συντομογραφία του ‘handler: handler’
     handler,
-    // Methods
+    // Μέθοδοι
     toString() {
-     // Super calls
+     // Κλήση super
      return "d " + super.toString();
     },
-    // Computed (dynamic) property names
+    // Δυναμική δημιουργία ονομάτων ιδιοτήτων
     [ 'prop_' + (() => 42)() ]: 42
 };
 ```
