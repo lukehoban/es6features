@@ -469,32 +469,32 @@ c["key"] === undefined
 ```
 
 ### Subclassable Built-ins
-In ES6, built-ins like `Array`, `Date` and DOM `Element`s can be subclassed.
+Στην ES6, ενσωματωμένα αντικείμενα όπως τα `Array`, `Date` και τα στοιχεία του DOM μπορούν να παράγουν νέες κλάσεις.
 
-Object construction for a function named `Ctor` now uses two-phases (both virtually dispatched):
-- Call `Ctor[@@create]` to allocate the object, installing any special behavior
-- Invoke constructor on new instance to initialize
+Η δημιουργία αντικειμένου για μια συνάρτηση που ονομάζεται `Ctor` τώρα χρησιμοποιεί δύο φάσεις (και οι δύο με εικονική αποστολή ):
+- Κλήση της `Ctor[@@create]` για να διαθέσει το αντικείμενο, εγκαθιστώντας οποιαδήποτε ειδική συμπεριφορά
+- Επίκληση του δημιουργού σε ένα νέο στιγμιότυπο για την αρχικοποίηση
 
-The known `@@create` symbol is available via `Symbol.create`.  Built-ins now expose their `@@create` explicitly.
+Το γνωστό σύμβολο `@@create` είναι διαθέσιμο μέσω του `Symbol.create`.  Τα ενσωματωμένα αντικείμενα τώρα εκθέτουν το δικό τους `@@create` ρητά.
 
 ```JavaScript
-// Pseudo-code of Array
+// Ψευδοκώδικας ενός πίνακα
 class Array {
     constructor(...args) { /* ... */ }
     static [Symbol.create]() {
-        // Install special [[DefineOwnProperty]]
-        // to magically update 'length'
+        // Εγκατάσταση ειδικών [[DefineOwnProperty]]
+        // για την χειρωνακτική ενημέρωση της ιδιότητας 'length'
     }
 }
 
-// User code of Array subclass
+// Ο κώδικας χρήστη μιας υπό-κλάσης πίνακα
 class MyArray extends Array {
     constructor(...args) { super(...args); }
 }
 
-// Two-phase 'new':
-// 1) Call @@create to allocate object
-// 2) Invoke constructor on new instance
+// 'new' δύο φάσεων:
+// 1) Κλήση της @@create για την διέθεση του αντικειμένου
+// 2) Επίκληση του δημιουργού σε νέο στιγμιότυπο
 var arr = new MyArray();
 arr[1] = 12;
 arr.length == 2
