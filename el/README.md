@@ -202,8 +202,9 @@ function f() {
 }
 ```
 
-### Iterators + For..Of
-Iterator objects enable custom iteration like CLR IEnumerable or Java Iterable.  Generalize `for..in` to custom iterator-based iteration with `for..of`.  Don’t require realizing an array, enabling lazy design patterns like LINQ.
+### Επαναλήπτες + for..of (Iterators + for..of)
+Τα αντικείμενα επαναλήψεων επιτρέπει τις προσαρμοσμένες επαναλήψεις όπως το CLR IEnumerable ή το Java Iterable. Γενικευμένες `for..in` για την προσαρμογή βασισμένων σε επαναλήπτες
+επανάληψη με `for..of`. Δεν απαιτεί την υλοποίηση ενός πίνακα, ενεργοποιώντας τα βαρετά μοτίβα σχεδιασμού όπως το LINQ.
 
 ```JavaScript
 let fibonacci = {
@@ -219,14 +220,14 @@ let fibonacci = {
 }
 
 for (var n of fibonacci) {
-  // truncate the sequence at 1000
+  // Περικοπή της ακολουθίας στα 1000
   if (n > 1000)
     break;
   console.log(n);
 }
 ```
 
-Iteration is based on these duck-typed interfaces (using [TypeScript](http://typescriptlang.org) type syntax for exposition only):
+Η επανάληψη είναι βασισμένη στις ακόλουθες duck-typed διεπαφές (χρήση της σύνταξης τύπου του [TypeScript](http://typescriptlang.org) μόνο για έκθεση):
 ```TypeScript
 interface IteratorResult {
   done: boolean;
