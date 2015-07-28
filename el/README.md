@@ -183,7 +183,7 @@ f(...[1,2,3]) == 6
 ```
 
 ### Let + Const
-Block-scoped binding constructs.  `let` is the new `var`.  `const` is single-assignment.  Static restrictions prevent use before assignment.
+Δημιουργία δέσμευσης σε πεδίο εφαρμογής μπλοκ. Η `let` είναι η νέα `var`.  Η `const` δέχεται μόνο μια ανάθεση τιμής. Στατικοί περιορισμοί απαγορεύουν την χρήση πριν την ανάθεση τιμής.
 
 
 ```JavaScript
@@ -191,12 +191,12 @@ function f() {
   {
     let x;
     {
-      // okay, block scoped name
+      // OK, Όνομα σε πεδίο εφαρμογής μπλοκ
       const x = "sneaky";
-      // error, const
+      // Εσφαλμένη ανάθεση τιμής
       x = "foo";
     }
-    // error, already declared in block
+    // Σφάλμα, έχει ήδη δηλωθεί μέσα στο ίδιο μπλοκ
     let x = "inner";
   }
 }
