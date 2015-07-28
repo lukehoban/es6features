@@ -441,14 +441,14 @@ var handler =
 }
 ```
 
-### Symbols
-Symbols enable access control for object state.  Symbols allow properties to be keyed by either `string` (as in ES5) or `symbol`.  Symbols are a new primitive type. Optional `name` parameter used in debugging - but is not part of identity.  Symbols are unique (like gensym), but not private since they are exposed via reflection features like `Object.getOwnPropertySymbols`.
+### Σύμβολα (Symbols)
+Τα σύμβολα ενεργοποιούν τον έλεγχο πρόσβασης στην κατάσταση των αντικειμένων. Τα σύμβολα επιτρέπουν τις ιδιότητες να έχουν κλειδιά είναι ως `string` (όπως στην ES5) ή `symbol`. Τα σύμβολα είναι νέος πρωταρχικός τύπος δεδομένων. Προαιρετικά παράμετροι `name` χρησιμοποιούνται κατά την αποσφαλμάτωση - αλλά δεν είναι μέρος της οντότητας. Τα σύμβολα είναι μοναδικά (όπως το gensym), αλλά όχι ιδιωτικά αφού μπορούν να εκτεθούν μέσω της ιδιότητας ανάκλασης όπως το `Object.getOwnPropertySymbols`.
 
 
 ```JavaScript
 var MyClass = (function() {
 
-  // module scoped symbol
+  // Σύμβολο μέσα σε μονάδα
   var key = Symbol("key");
 
   function MyClass(privateData) {
