@@ -364,7 +364,7 @@ System.set('jquery', Module({$: $})); // ΠΡΟΣΟΧΗ: δεν έχει ολο�
 ```
 
 ### Map + Set + WeakMap + WeakSet
-Efficient data structures for common algorithms.  WeakMaps provides leak-free object-key’d side tables.
+Αποδοτικές δομές δεδομένων για κοινού αλγόριθμους. Το WeakMaps παρέχει χωρίς διαρροές πίνακες με κλειδιά από αντικείμενα.
 
 ```JavaScript
 // Sets
@@ -387,7 +387,7 @@ wm.size === undefined
 // Weak Sets
 var ws = new WeakSet();
 ws.add({ data: 42 });
-// Because the added object has no other references, it will not be held in the set
+// Επειδή το νέο αντικείμενο δεν έχει κάποια άλλη αναφορά, δεν θα ενσωματωθεί στο σύνολο.
 ```
 
 ### Proxies
