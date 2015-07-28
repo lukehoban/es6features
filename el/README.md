@@ -127,32 +127,32 @@ GET`http://foo.org/bar?a=${a}&b=${b}
       "bar": ${bar}}`(myOnReadyStateChangeHandler);
 ```
 
-### Destructuring
-Destructuring allows binding using pattern matching, with support for matching arrays and objects.  Destructuring is fail-soft, similar to standard object lookup `foo["bar"]`, producing `undefined` values when not found.
+### Αποδόμηση (Destructuring)
+Η αποδόμηση επιτρέπει την δέσμευση χρησιμοποιώντας μοτίβα ταιριάσματος, με υποστήριξη για ταίριασμα πινάκων και αντικειμένων. Η αποδόμηση αποτυγχάνει ομαλά, παρόμοια με το πρότυπο αναζήτησης σε αντικείμενα `foo["bar"]`, παράγοντας την τιμή `undefined` όταν δεν βρίσκει κάτι.
 
 ```JavaScript
-// list matching
+// Ταίριασμα λίστας
 var [a, , b] = [1,2,3];
 
-// object matching
+// Ταίριασμα αντικειμένων
 var { op: a, lhs: { op: b }, rhs: c }
        = getASTNode()
 
-// object matching shorthand
-// binds `op`, `lhs` and `rhs` in scope
+// Συντόμευση ταιριάσματος αντικειμένου
+// Δένει τα `op`, `lhs` και `rhs` στο πεδίο εφαρμογής
 var {op, lhs, rhs} = getASTNode()
 
-// Can be used in parameter position
+// Μπορεί να χρησιμοποιηθεί στην θέση παραμέτρων
 function g({name: x}) {
   console.log(x);
 }
 g({name: 5})
 
-// Fail-soft destructuring
+// Ομαλή αποτυχία κατά την αποδόμηση
 var [a] = [];
 a === undefined;
 
-// Fail-soft destructuring with defaults
+// Ομαλή αποτυχία κατά την αποδόμηση με προεπιλεγμένες τιμές
 var [a = 1] = [];
 a === 1;
 ```
