@@ -299,8 +299,8 @@ for(var c of "𠮷") {
 }
 ```
 
-### Modules
-Language-level support for modules for component definition.  Codifies patterns from popular JavaScript module loaders (AMD, CommonJS). Runtime behaviour defined by a host-defined default loader.  Implicitly async model – no code executes until requested modules are available and processed.
+### Μονάδες (Modules)
+Υποστήριξη μονάδων σε επίπεδο κώδικα για τον ορισμών δομικών στοιχείων. Ενσωμάτωση μοτίβων από γνωστές μονάδες φόρτωσης JavaScript (AMD, CommonJS). Συμπεριφορά κατά την εκτέλεση καθορισμένη από τον προ επιλεγμένο φορτωτή που έχει ορίσει ο host. Άμεσα ασύγχρονο μοντέλο - δεν εκτελείτε κώδικας μέχρι οι απαιτούμενες μονάδες να είναι διαθέσιμες και επεξεργασμένες.
 
 ```JavaScript
 // lib/math.js
@@ -320,7 +320,7 @@ import {sum, pi} from "lib/math";
 alert("2π = " + sum(pi, pi));
 ```
 
-Some additional features include `export default` and `export *`:
+Κάποια επιπρόσθετα χαρακτηριστικά περιλαμβάνουν τα `export default` και `export *`:
 
 ```JavaScript
 // lib/mathplusplus.js
