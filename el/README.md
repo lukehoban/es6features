@@ -391,10 +391,10 @@ ws.add({ data: 42 });
 ```
 
 ### Proxies
-Proxies enable creation of objects with the full range of behaviors available to host objects.  Can be used for interception, object virtualization, logging/profiling, etc.
+Οι Proxies ενεργοποιούν την δημιουργία αντικειμένων με πλήρες εύρος συμπεριφοράς διαθέσιμη στα αντικείμενα που τους φιλοξενούν. Μπορούν να χρησιμοποιηθούν για υποκλοπή, virtualization αντικειμένων, καταγραφή/δημιουργία προφίλ, κλπ.
 
 ```JavaScript
-// Proxying a normal object
+// Proxying σε ένα κανονικό αντικείμενο
 var target = {};
 var handler = {
   get: function (receiver, name) {
@@ -407,7 +407,7 @@ p.world === 'Hello, world!';
 ```
 
 ```JavaScript
-// Proxying a function object
+// Proxying ένα αντικείμενο συνάρτηση
 var target = function () { return 'I am the target'; };
 var handler = {
   apply: function (receiver, ...args) {
@@ -419,7 +419,7 @@ var p = new Proxy(target, handler);
 p() === 'I am the proxy';
 ```
 
-There are traps available for all of the runtime-level meta-operations:
+Υπάρχουν διαθέσιμες παγίδες για όλες τις μέτα-λειτουργίες σε επίπεδο χρόνου εκτέλεσης:
 
 ```JavaScript
 var handler =
