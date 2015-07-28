@@ -562,8 +562,8 @@ var p = timeout(1000).then(() => {
 // Δεν υπάρχει ακόμα δείγμα
 ```
 
-### Tail Calls
-Calls in tail-position are guaranteed to not grow the stack unboundedly.  Makes recursive algorithms safe in the face of unbounded inputs.
+### Κλήσεις ουράς (tail calls)
+Κλήσεις στην θέση της ουράς εγγυώνται πως δεν θα μεγαλώσει η στοίβα απεριόριστα. Αυτό το χαρακτηριστικό κάνει αλγόριθμους επανάληψης ασφαλείς σε απεριόριστη είσοδο. 
 
 ```JavaScript
 function factorial(n, acc = 1) {
@@ -572,7 +572,7 @@ function factorial(n, acc = 1) {
     return factorial(n - 1, n * acc);
 }
 
-// Stack overflow in most implementations today,
-// but safe on arbitrary inputs in ES6
+// Υπερχείλιση στοίβας στις περισσότερες εφαρμογές σήμερα,
+// αλλά ασφαλές σε αυθαίρετες εισόδους στην ES6
 factorial(100000)
 ```
