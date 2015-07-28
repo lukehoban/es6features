@@ -158,18 +158,18 @@ a === 1;
 ```
 
 ### Default + Rest + Spread
-Callee-evaluated default parameter values.  Turn an array into consecutive arguments in a function call.  Bind trailing parameters to an array.  Rest replaces the need for `arguments` and addresses common cases more directly.
+Αξιολόγηση στις τιμές του καλούντος προγράμματος με προεπιλεγμένες τιμές. Μετατρέπει ενός πίνακα σε διαδοχικά στοιχεία κατά την κλήση μιας συνάρτησης. Δένει τις παραμέτρους που ακολουθούν σε ένα πίνακα. Το Rest αντικαθιστά την ανάγκη για `arguments` και εξετάζει τις κοινές υποθέσεις πιο άμεσα.
 
 ```JavaScript
 function f(x, y=12) {
-  // y is 12 if not passed (or passed as undefined)
+  // Το y είναι 12 αν δεν οριστεί από το πρόγραμμα που χρησιμοποιεί την συνάρτηση (ή αν δεν οριστεί σε undefined)
   return x + y;
 }
 f(3) == 15
 ```
 ```JavaScript
 function f(x, ...y) {
-  // y is an Array
+  // Το y είναι ένα πίνακας
   return x * y.length;
 }
 f(3, "hello", true) == 6
@@ -178,7 +178,7 @@ f(3, "hello", true) == 6
 function f(x, y, z) {
   return x + y + z;
 }
-// Pass each elem of array as argument
+// Περνάει κάθε στοιχείο του πίνακα ως παραμέτρους στην συνάρτηση
 f(...[1,2,3]) == 6
 ```
 
