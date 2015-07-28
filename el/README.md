@@ -22,9 +22,9 @@
 - [proxies](#proxies)
 - [σύμβολα (symbols)](#symbols)
 - [subclassable built-ins](#subclassable-built-ins)
-- [υποσχέσεις (promises)](#promises)
 - [APIs για μαθηματικά + αριθμούς + συμβολοσειρές + πίνακες + αντικείμενα (math + number + string + array + object APIs)](#math--number--string--array--object-apis)
 - [κυριολεκτικά δυαδικών και οκταδικών (binary and octal literals)](#binary-and-octal-literals)
+- [υποσχέσεις (promises)](#promises)
 - [API ανάκλασης (reflect api)](#reflect-api)
 - [κλήσεις ουράς (tail calls)](#tail-calls)
 
@@ -536,8 +536,8 @@ Object.assign(Point, { origin: new Point(0,0) })
 0o767 === 503 // true
 ```
 
-### Promises
-Promises are a library for asynchronous programming.  Promises are a first class representation of a value that may be made available in the future.  Promises are used in many existing JavaScript libraries.
+### Υποσχέσεις (promises)
+Οι υποσχέσεις είναι μια βιβλιοθήκη για ασύγχρονο προγραμματισμό. Οι υποσχέσεις είναι αναπαράσταση πρώτης κλάσης μια τιμής που ίσως να είναι διαθέσιμη στο μέλλον. Οι υποσχέσεις χρησιμοποιούνται σε πολλές υφιστάμενες βιβλιοθήκες JavaScript.
 
 ```JavaScript
 function timeout(duration = 0) {
