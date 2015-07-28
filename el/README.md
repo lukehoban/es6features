@@ -278,22 +278,22 @@ interface Generator extends Iterator {
 ```
 
 ### Unicode
-Non-breaking additions to support full Unicode, including new Unicode literal form in strings and new RegExp `u` mode to handle code points, as well as new APIs to process strings at the 21bit code points level.  These additions support building global apps in JavaScript.
+Προσθήκες χωρίς-διάσπαση για πλήρη υποστήριξη Unicode, συμπεριλαμβανομένων νέων κυριολεκτικών μορφών Unicode σε συμβολοσειρές και νέοι RegExp `u` τρόπου για την διαχείριση σημείων κώδικα, όπως επίσης και νέες API για την επεξεργασία συμβολοσειρών σε σημεία επιπέδου κώδικα 21bit. Αυτές οι προσθήκες υποστηρίζουν δημιουργία καθολικών (παγκόσμιων) εφαρμογών σε JavaScript.
 
 ```JavaScript
-// same as ES5.1
+// Όπως και στην ES5.1
 "𠮷".length == 2
 
-// new RegExp behaviour, opt-in ‘u’
+// Νέα συμπεριφορά της RegExp, opt-in ‘u’
 "𠮷".match(/./u)[0].length == 2
 
-// new form
+// Νέα μορφή
 "\u{20BB7}"=="𠮷"=="\uD842\uDFB7"
 
-// new String ops
+// Νέες επιλογές σε συμβολοσειρές
 "𠮷".codePointAt(0) == 0x20BB7
 
-// for-of iterates code points
+// Επαναλήψεις σημείων κώδικα for-of
 for(var c of "𠮷") {
   console.log(c);
 }
