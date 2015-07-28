@@ -336,31 +336,31 @@ import ln, {pi, e} from "lib/mathplusplus";
 alert("2π = " + ln(e)*pi*2);
 ```
 
-### Module Loaders
-Module loaders support:
-- Dynamic loading
-- State isolation
-- Global namespace isolation
+### Φορτωτές Μονάδων (Module Loaders)
+Οι φορτωτές μονάδες υποστηρίζουν
+- Δυναμικό φόρτωμα
+- Απομόνωση κατάστασης
+- Καθολική απομόνωση ονόματος χώρου
 - Compilation hooks
-- Nested virtualization
+- Ενθυλακωμένο virtualization
 
-The default module loader can be configured, and new loaders can be constructed to evaluate and load code in isolated or constrained contexts.
+Ο εξ ορισμού φορτωτής μονάδων μπορεί να ρυθμιστεί, και οι νέοι φορτωτές μπορούν να δημιουργηθούν να αξιολογούν και να φορτώνουν κώδικα σε απομονωμένο ή περιορισμένο περιβάλλον.
 
 ```JavaScript
-// Dynamic loading – ‘System’ is default loader
+// Δυναμικό φόρτωμα – Το ‘System’ είναι ο προεπιλεγμένος φορτωτής
 System.import('lib/math').then(function(m) {
   alert("2π = " + m.sum(m.pi, m.pi));
 });
 
-// Create execution sandboxes – new Loaders
+// Δημιουργία ενός κουτιού ασφαλείας για εκτέλεση – new Loaders
 var loader = new Loader({
-  global: fixup(window) // replace ‘console.log’
+  global: fixup(window) // Αντικαθιστά το ‘console.log’
 });
 loader.eval("console.log('hello world!');");
 
-// Directly manipulate module cache
+// Άμεση διαχείριση της cache μονάδων
 System.get('jquery');
-System.set('jquery', Module({$: $})); // WARNING: not yet finalized
+System.set('jquery', Module({$: $})); // ΠΡΟΣΟΧΗ: δεν έχει ολοκληρωθεί ακόμα
 ```
 
 ### Map + Set + WeakMap + WeakSet
