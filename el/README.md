@@ -555,11 +555,11 @@ var p = timeout(1000).then(() => {
 })
 ```
 
-### Reflect API
-Full reflection API exposing the runtime-level meta-operations on objects.  This is effectively the inverse of the Proxy API, and allows making calls corresponding to the same meta-operations as the proxy traps.  Especially useful for implementing proxies.
+### API ανάκλασης (reflect api)
+Η πλήρης API ανάκλασης εκθέτει σε επίπεδο χρόνου εκτέλεσης τις μέτα-εργασίες στα αντικείμενα. Αυτό ουσιαστικά είναι το αντίθετο του Proxy API, και επιτρέπει την δημιουργία κλήσεων που αντιστοιχούν στις ίδιες μέτα-εργασίες όπως οι παγίδες των proxy. Είναι ειδικά χρήσιμο για την υλοποίηση των proxies.
 
 ```JavaScript
-// No sample yet
+// Δεν υπάρχει ακόμα δείγμα
 ```
 
 ### Tail Calls
