@@ -500,8 +500,8 @@ arr[1] = 12;
 arr.length == 2
 ```
 
-### Math + Number + String + Array + Object APIs
-Many new library additions, including core Math libraries, Array conversion helpers, String helpers, and Object.assign for copying.
+### APIs για μαθηματικά + αριθμούς + συμβολοσειρές + πίνακες + αντικείμενα (math + number + string + array + object APIs)
+Πολλές νέες προσθήκες βιβλιοθηκών, συμπεριλαμβανομένων των Math βιβλιοθηκών, βοηθοί μετατροπής πινάκων, βοηθοί συμβολοσειρών, και Object.assign για αντιγραφή.
 
 ```JavaScript
 Number.EPSILON
@@ -515,15 +515,15 @@ Math.imul(Math.pow(2, 32) - 1, Math.pow(2, 32) - 2) // 2
 "abcde".includes("cd") // true
 "abc".repeat(3) // "abcabcabc"
 
-Array.from(document.querySelectorAll('*')) // Returns a real Array
-Array.of(1, 2, 3) // Similar to new Array(...), but without special one-arg behavior
+Array.from(document.querySelectorAll('*')) // Επιστρέφει ένα πραγματικό πίνακα
+Array.of(1, 2, 3) // Όμοιο με το new Array(...), αλλά χωρίς την ειδική συμπεριφορά one-arg
 [0, 0, 0].fill(7, 1) // [0,7,7]
 [1, 2, 3].find(x => x == 3) // 3
 [1, 2, 3].findIndex(x => x == 2) // 1
 [1, 2, 3, 4, 5].copyWithin(3, 0) // [1, 2, 3, 1, 2]
-["a", "b", "c"].entries() // iterator [0, "a"], [1,"b"], [2,"c"]
-["a", "b", "c"].keys() // iterator 0, 1, 2
-["a", "b", "c"].values() // iterator "a", "b", "c"
+["a", "b", "c"].entries() // επαναλήπτης [0, "a"], [1,"b"], [2,"c"]
+["a", "b", "c"].keys() // επαναλήπτης 0, 1, 2
+["a", "b", "c"].values() // επαναλήπτης "a", "b", "c"
 
 Object.assign(Point, { origin: new Point(0,0) })
 ```
