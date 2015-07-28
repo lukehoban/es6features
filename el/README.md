@@ -1,51 +1,51 @@
 # ECMAScript 6 <sup>[git.io/es6features](http://git.io/es6features)</sup>
 
-## Introduction
-ECMAScript 6, also known as ECMAScript 2015, is the latest version of the ECMAScript standard.  ES6 is a significant update to the language, and the first update to the language since ES5 was standardized in 2009. Implementation of these features in major JavaScript engines is [underway now](http://kangax.github.io/es5-compat-table/es6/).
+## Εισαγωγή
+Η ECMAScript 6, επίσης γνωστή και ως ECMAScript 2015, είναι η ποιο πρόσφατη έκδοση του προτύπου ECMAScript. Η ES6 αποτελεί μια σημαντική αναβάθμιση της γλώσσας, και η πρώτη αναβάθμιση στην γλώσσα από την ES5 τυποποιήθηκε το 2009. Υλοποίηση αυτών των χαρακτηριστικών στις σημαντικές μηχανές JavaScript είναι [τώρα σε εξέλιξη](http://kangax.github.io/es5-compat-table/es6/).
 
-See the [ES6 standard](http://www.ecma-international.org/ecma-262/6.0/) for full specification of the ECMAScript 6 language.
+Δείτε το [πρότυπο ES6](http://www.ecma-international.org/ecma-262/6.0/) για πλήρη αναφορά στις προδιαγραφές της γλώσσας ECMAScript 6.
 
-ES6 includes the following new features:
-- [arrows](#arrows)
-- [classes](#classes)
-- [enhanced object literals](#enhanced-object-literals)
-- [template strings](#template-strings)
-- [destructuring](#destructuring)
+Η ES6 περιλαμβάνει τα ακόλουθα νέα χαρακτηριστικά:
+- [βέλη (arrows)](#arrows)
+- [κλάσεις (classes)](#classes)
+- [βελτιομένα κυριολεκτικά αντικειμένων (enhanced object literals)](#enhanced-object-literals)
+- [πρότυπα συμβολοσειρών (template strings)](#template-strings)
+- [αποδόμηση (destructuring)](#destructuring)
 - [default + rest + spread](#default--rest--spread)
 - [let + const](#let--const)
-- [iterators + for..of](#iterators--forof)
-- [generators](#generators)
+- [επαναλήπτες + for..of (iterators + for..of)](#iterators--forof)
+- [γεννήτριες (generators)](#generators)
 - [unicode](#unicode)
-- [modules](#modules)
-- [module loaders](#module-loaders)
+- [μονάδες (modules)](#modules)
+- [φορτωτές μονάδων (module loaders)](#module-loaders)
 - [map + set + weakmap + weakset](#map--set--weakmap--weakset)
 - [proxies](#proxies)
-- [symbols](#symbols)
+- [σύμβολα (symbols)](#symbols)
 - [subclassable built-ins](#subclassable-built-ins)
-- [promises](#promises)
-- [math + number + string + array + object APIs](#math--number--string--array--object-apis)
-- [binary and octal literals](#binary-and-octal-literals)
-- [reflect api](#reflect-api)
-- [tail calls](#tail-calls)
+- [APIs για μαθηματικά + αριθμούς + συμβολοσειρές + πίνακες + αντικείμενα (math + number + string + array + object APIs)](#math--number--string--array--object-apis)
+- [κυριολεκτικά δυαδικών και οκταδικών (binary and octal literals)](#binary-and-octal-literals)
+- [υποσχέσεις (promises)](#promises)
+- [API ανάκλασης (reflect api)](#reflect-api)
+- [κλήσεις ουράς (tail calls)](#tail-calls)
 
-## ECMAScript 6 Features
+## Χαρακτηριστικά της ECMAScript 6
 
-### Arrows
-Arrows are a function shorthand using the `=>` syntax.  They are syntactically similar to the related feature in C#, Java 8 and CoffeeScript.  They support both statement block bodies as well as expression bodies which return the value of the expression.  Unlike functions, arrows share the same lexical `this` as their surrounding code.
+### Βέλη (arrow)
+Τα βέλη είναι συντομογραφίες συναρτήσεων που χρησιμοποιούν το συντακτικό `=>`. Είναι συντακτικά όμοια των σχετικών χαρακτηριστικών στην C#, Java 8 και της CoffeeScript. Υποστηρίζουν τόσο δηλώσεις κορμού σε πλαίσιο όσο και δηλώσεις κορμού οι οποίες επιστρέφουν την τιμή της δήλωσης. Αντίθετα από τις συναρτήσεις, τα βέλη μοιράζονται το ίδιο λεξιλογικό `this` με αυτό του κώδικα που τα πλαισιώνει.  
 
 ```JavaScript
-// Expression bodies
+// Κορμοί δήλωσης
 var odds = evens.map(v => v + 1);
 var nums = evens.map((v, i) => v + i);
 var pairs = evens.map(v => ({even: v, odd: v + 1}));
 
-// Statement bodies
+// Κορμοί δήλωσης
 nums.forEach(v => {
   if (v % 5 === 0)
     fives.push(v);
 });
 
-// Lexical this
+// Λεξιλογικό this
 var bob = {
   _name: "Bob",
   _friends: [],
@@ -56,8 +56,8 @@ var bob = {
 }
 ```
 
-### Classes
-ES6 classes are a simple sugar over the prototype-based OO pattern.  Having a single convenient declarative form makes class patterns easier to use, and encourages interoperability.  Classes support prototype-based inheritance, super calls, instance and static methods and constructors.
+### Κλάσεις (Classes)
+Η κλάσεις στην ES6, είναι απλή ζάχαρη πάνω από τα βασισμένα σε prototypes αντικειμενοστρεφή πρότυπα. Η ύπαρξη μιας ενιαίας βολικής μορφής δήλωσης, κάνει τα πρότυπα κλάσεων ποιο εύκολα στην χρήση, και προτρέπουν την διαλειτουργικότητα. Οι κλάσεις υποστηρίζουν κληρονομικότητα βασισμένη στα prototypes, κλήσεις super, στιγμιότυπα, στατικές μεθόδους και δημιουργούς.
 
 ```JavaScript
 class SkinnedMesh extends THREE.Mesh {
@@ -85,41 +85,41 @@ class SkinnedMesh extends THREE.Mesh {
 }
 ```
 
-### Enhanced Object Literals
-Object literals are extended to support setting the prototype at construction, shorthand for `foo: foo` assignments, defining methods, making super calls, and computing property names with expressions.  Together, these also bring object literals and class declarations closer together, and let object-based design benefit from some of the same conveniences.
+### Βελτιομένα κυριολεκτικά αντικειμένων (enhanced object literals)
+Τα κυριολεκτικά αντικειμένων έχουν επεκταθεί ώστε να υποστηρίζουν την ρύθμιση του prototype κατά την δημιουργία, συντομεύσεις για αναθέσεις `foo: foo`, ορισμούς μεθόδων, κλήσεις super, και υπολογισμό ονομάτων ιδιοτήτων με εκφράσεις. Μαζί, αυτά επίσης φέρνουν κυριολεκτικά αντικείμενα και δηλώσεις κλάσεων ποιο κοντά μαζί, και επιτρέπουν τα πλεονεκτήματα του βασισμένου σε αντικείμενα σχεδιασμού μερικές από τις ίδιες ανέσεις.
 
 ```JavaScript
 var obj = {
     // __proto__
     __proto__: theProtoObj,
-    // Shorthand for ‘handler: handler’
+    // Συντομογραφία του ‘handler: handler’
     handler,
-    // Methods
+    // Μέθοδοι
     toString() {
-     // Super calls
+     // Κλήση super
      return "d " + super.toString();
     },
-    // Computed (dynamic) property names
+    // Δυναμική δημιουργία ονομάτων ιδιοτήτων
     [ 'prop_' + (() => 42)() ]: 42
 };
 ```
 
-### Template Strings
-Template strings provide syntactic sugar for constructing strings.  This is similar to string interpolation features in Perl, Python and more.  Optionally, a tag can be added to allow the string construction to be customized, avoiding injection attacks or constructing higher level data structures from string contents.
+### Πρότυπα συμβολοσειρών (template strings)
+Τα πρότυπα συμβολοσειρών παρέχουν συντακτική ζάχαρη στην δημιουργία συμβολοσειρών. Αυτό είναι παρόμοιο με το χαρακτηριστικό παρεμβολής συμβολοσειρών στην Perl,  την Python και άλλα. Προαιρετικά, μια ετικέτα μπορεί να προστεθεί για να επιτρέψει την δημιουργία της συμβολοσειράς να προσαρμοστεί, αποφεύγοντας τις επιθέσεις ένεσης ή την δημιουργία υψηλότερου επιπέδου δομών δεδομένων από περιεχόμενο συμβολοσειρών.
 
 ```JavaScript
-// Basic literal string creation
+// Βασική δημιουργία συμβολοσειράς
 `In JavaScript '\n' is a line-feed.`
 
-// Multiline strings
+// Συμβολοσειρά πολλαπλών γραμμών
 `In JavaScript this is
  not legal.`
 
-// String interpolation
+// Παρέμβαση συμβολοσειράς
 var name = "Bob", time = "today";
 `Hello ${name}, how are you ${time}?`
 
-// Construct an HTTP request prefix is used to interpret the replacements and construction
+// Δόμηση ενός HTTP request prefix που χρησιμοποιείται για να ερμηνεύσει τις αντικαταστάσεις και την κατασκευή
 GET`http://foo.org/bar?a=${a}&b=${b}
     Content-Type: application/json
     X-Credentials: ${credentials}
@@ -127,49 +127,49 @@ GET`http://foo.org/bar?a=${a}&b=${b}
       "bar": ${bar}}`(myOnReadyStateChangeHandler);
 ```
 
-### Destructuring
-Destructuring allows binding using pattern matching, with support for matching arrays and objects.  Destructuring is fail-soft, similar to standard object lookup `foo["bar"]`, producing `undefined` values when not found.
+### Αποδόμηση (Destructuring)
+Η αποδόμηση επιτρέπει την δέσμευση χρησιμοποιώντας μοτίβα ταιριάσματος, με υποστήριξη για ταίριασμα πινάκων και αντικειμένων. Η αποδόμηση αποτυγχάνει ομαλά, παρόμοια με το πρότυπο αναζήτησης σε αντικείμενα `foo["bar"]`, παράγοντας την τιμή `undefined` όταν δεν βρίσκει κάτι.
 
 ```JavaScript
-// list matching
+// Ταίριασμα λίστας
 var [a, , b] = [1,2,3];
 
-// object matching
+// Ταίριασμα αντικειμένων
 var { op: a, lhs: { op: b }, rhs: c }
        = getASTNode()
 
-// object matching shorthand
-// binds `op`, `lhs` and `rhs` in scope
+// Συντόμευση ταιριάσματος αντικειμένου
+// Δένει τα `op`, `lhs` και `rhs` στο πεδίο εφαρμογής
 var {op, lhs, rhs} = getASTNode()
 
-// Can be used in parameter position
+// Μπορεί να χρησιμοποιηθεί στην θέση παραμέτρων
 function g({name: x}) {
   console.log(x);
 }
 g({name: 5})
 
-// Fail-soft destructuring
+// Ομαλή αποτυχία κατά την αποδόμηση
 var [a] = [];
 a === undefined;
 
-// Fail-soft destructuring with defaults
+// Ομαλή αποτυχία κατά την αποδόμηση με προεπιλεγμένες τιμές
 var [a = 1] = [];
 a === 1;
 ```
 
 ### Default + Rest + Spread
-Callee-evaluated default parameter values.  Turn an array into consecutive arguments in a function call.  Bind trailing parameters to an array.  Rest replaces the need for `arguments` and addresses common cases more directly.
+Αξιολόγηση στις τιμές του καλούντος προγράμματος με προεπιλεγμένες τιμές. Μετατρέπει ενός πίνακα σε διαδοχικά στοιχεία κατά την κλήση μιας συνάρτησης. Δένει τις παραμέτρους που ακολουθούν σε ένα πίνακα. Το Rest αντικαθιστά την ανάγκη για `arguments` και εξετάζει τις κοινές υποθέσεις πιο άμεσα.
 
 ```JavaScript
 function f(x, y=12) {
-  // y is 12 if not passed (or passed as undefined)
+  // Το y είναι 12 αν δεν οριστεί από το πρόγραμμα που χρησιμοποιεί την συνάρτηση (ή αν δεν οριστεί σε undefined)
   return x + y;
 }
 f(3) == 15
 ```
 ```JavaScript
 function f(x, ...y) {
-  // y is an Array
+  // Το y είναι ένα πίνακας
   return x * y.length;
 }
 f(3, "hello", true) == 6
@@ -178,12 +178,12 @@ f(3, "hello", true) == 6
 function f(x, y, z) {
   return x + y + z;
 }
-// Pass each elem of array as argument
+// Περνάει κάθε στοιχείο του πίνακα ως παραμέτρους στην συνάρτηση
 f(...[1,2,3]) == 6
 ```
 
 ### Let + Const
-Block-scoped binding constructs.  `let` is the new `var`.  `const` is single-assignment.  Static restrictions prevent use before assignment.
+Δημιουργία δέσμευσης σε πεδίο εφαρμογής μπλοκ. Η `let` είναι η νέα `var`.  Η `const` δέχεται μόνο μια ανάθεση τιμής. Στατικοί περιορισμοί απαγορεύουν την χρήση πριν την ανάθεση τιμής.
 
 
 ```JavaScript
@@ -191,19 +191,20 @@ function f() {
   {
     let x;
     {
-      // okay, block scoped name
+      // OK, Όνομα σε πεδίο εφαρμογής μπλοκ
       const x = "sneaky";
-      // error, const
+      // Εσφαλμένη ανάθεση τιμής
       x = "foo";
     }
-    // error, already declared in block
+    // Σφάλμα, έχει ήδη δηλωθεί μέσα στο ίδιο μπλοκ
     let x = "inner";
   }
 }
 ```
 
-### Iterators + For..Of
-Iterator objects enable custom iteration like CLR IEnumerable or Java Iterable.  Generalize `for..in` to custom iterator-based iteration with `for..of`.  Don’t require realizing an array, enabling lazy design patterns like LINQ.
+### Επαναλήπτες + for..of (Iterators + for..of)
+Τα αντικείμενα επαναλήψεων επιτρέπει τις προσαρμοσμένες επαναλήψεις όπως το CLR IEnumerable ή το Java Iterable. Γενικευμένες `for..in` για την προσαρμογή βασισμένων σε επαναλήπτες
+επανάληψη με `for..of`. Δεν απαιτεί την υλοποίηση ενός πίνακα, ενεργοποιώντας τα βαρετά μοτίβα σχεδιασμού όπως το LINQ.
 
 ```JavaScript
 let fibonacci = {
@@ -219,14 +220,14 @@ let fibonacci = {
 }
 
 for (var n of fibonacci) {
-  // truncate the sequence at 1000
+  // Περικοπή της ακολουθίας στα 1000
   if (n > 1000)
     break;
   console.log(n);
 }
 ```
 
-Iteration is based on these duck-typed interfaces (using [TypeScript](http://typescriptlang.org) type syntax for exposition only):
+Η επανάληψη είναι βασισμένη στις ακόλουθες duck-typed διεπαφές (χρήση της σύνταξης τύπου του [TypeScript](http://typescriptlang.org) μόνο για έκθεση):
 ```TypeScript
 interface IteratorResult {
   done: boolean;
@@ -240,10 +241,11 @@ interface Iterable {
 }
 ```
 
-### Generators
-Generators simplify iterator-authoring using `function*` and `yield`.  A function declared as function* returns a Generator instance.  Generators are subtypes of iterators which include additional  `next` and `throw`.  These enable values to flow back into the generator, so `yield` is an expression form which returns a value (or throws).
+### Γεννήτριες (Generators)
 
-Note: Can also be used to enable ‘await’-like async programming, see also ES7 `await` proposal.
+Οι γεννήτριες απλοποιούν την συγγραφή επαναληπτών χρησιμοποιώντας το `function*` και `yield`. Μία συνάρτηση που έχει δηλωθεί ως function* επιστρέφει ένα στιγμιότυπο μιας γεννήτριας. Οι γεννήτριες είναι υπό-τύποι επαναληπτών που περιέχει επιπλέον τις συναρτήσεις `next` και `throw`. Αυτές επιτρέπουν στις τιμές να ολισθαίνουν πίσω στην γεννήτρια, έτσι η `yield` είναι μια δήλωση από την οποία επιστρέφει μια τιμή ( ή throws).
+
+Σημείωση: Μπορούν επίσης να χρησιμοποιηθούν για να ενεργοποιήσουν ασύγχρονο προγραμματισμό τύπου αναμονής, δείτε επίσης την πρόταση για το `await` της ES7.
 
 ```JavaScript
 var fibonacci = {
@@ -259,14 +261,14 @@ var fibonacci = {
 }
 
 for (var n of fibonacci) {
-  // truncate the sequence at 1000
+  // Περικοπή της ακολουθίας στα 1000
   if (n > 1000)
     break;
   console.log(n);
 }
 ```
 
-The generator interface is (using [TypeScript](http://typescriptlang.org) type syntax for exposition only):
+Η διεπαφή της γεννήτριας είναι (χρήση της σύνταξης τύπου του [TypeScript](http://typescriptlang.org) μόνο για έκθεση):
 
 ```TypeScript
 interface Generator extends Iterator {
@@ -276,29 +278,29 @@ interface Generator extends Iterator {
 ```
 
 ### Unicode
-Non-breaking additions to support full Unicode, including new Unicode literal form in strings and new RegExp `u` mode to handle code points, as well as new APIs to process strings at the 21bit code points level.  These additions support building global apps in JavaScript.
+Προσθήκες χωρίς-διάσπαση για πλήρη υποστήριξη Unicode, συμπεριλαμβανομένων νέων κυριολεκτικών μορφών Unicode σε συμβολοσειρές και νέοι RegExp `u` τρόπου για την διαχείριση σημείων κώδικα, όπως επίσης και νέες API για την επεξεργασία συμβολοσειρών σε σημεία επιπέδου κώδικα 21bit. Αυτές οι προσθήκες υποστηρίζουν δημιουργία καθολικών (παγκόσμιων) εφαρμογών σε JavaScript.
 
 ```JavaScript
-// same as ES5.1
+// Όπως και στην ES5.1
 "𠮷".length == 2
 
-// new RegExp behaviour, opt-in ‘u’
+// Νέα συμπεριφορά της RegExp, opt-in ‘u’
 "𠮷".match(/./u)[0].length == 2
 
-// new form
+// Νέα μορφή
 "\u{20BB7}"=="𠮷"=="\uD842\uDFB7"
 
-// new String ops
+// Νέες επιλογές σε συμβολοσειρές
 "𠮷".codePointAt(0) == 0x20BB7
 
-// for-of iterates code points
+// Επαναλήψεις σημείων κώδικα for-of
 for(var c of "𠮷") {
   console.log(c);
 }
 ```
 
-### Modules
-Language-level support for modules for component definition.  Codifies patterns from popular JavaScript module loaders (AMD, CommonJS). Runtime behaviour defined by a host-defined default loader.  Implicitly async model – no code executes until requested modules are available and processed.
+### Μονάδες (Modules)
+Υποστήριξη μονάδων σε επίπεδο κώδικα για τον ορισμών δομικών στοιχείων. Ενσωμάτωση μοτίβων από γνωστές μονάδες φόρτωσης JavaScript (AMD, CommonJS). Συμπεριφορά κατά την εκτέλεση καθορισμένη από τον προ επιλεγμένο φορτωτή που έχει ορίσει ο host. Άμεσα ασύγχρονο μοντέλο - δεν εκτελείτε κώδικας μέχρι οι απαιτούμενες μονάδες να είναι διαθέσιμες και επεξεργασμένες.
 
 ```JavaScript
 // lib/math.js
@@ -318,7 +320,7 @@ import {sum, pi} from "lib/math";
 alert("2π = " + sum(pi, pi));
 ```
 
-Some additional features include `export default` and `export *`:
+Κάποια επιπρόσθετα χαρακτηριστικά περιλαμβάνουν τα `export default` και `export *`:
 
 ```JavaScript
 // lib/mathplusplus.js
@@ -334,35 +336,35 @@ import ln, {pi, e} from "lib/mathplusplus";
 alert("2π = " + ln(e)*pi*2);
 ```
 
-### Module Loaders
-Module loaders support:
-- Dynamic loading
-- State isolation
-- Global namespace isolation
+### Φορτωτές Μονάδων (Module Loaders)
+Οι φορτωτές μονάδες υποστηρίζουν
+- Δυναμικό φόρτωμα
+- Απομόνωση κατάστασης
+- Καθολική απομόνωση ονόματος χώρου
 - Compilation hooks
-- Nested virtualization
+- Ενθυλακωμένο virtualization
 
-The default module loader can be configured, and new loaders can be constructed to evaluate and load code in isolated or constrained contexts.
+Ο εξ ορισμού φορτωτής μονάδων μπορεί να ρυθμιστεί, και οι νέοι φορτωτές μπορούν να δημιουργηθούν να αξιολογούν και να φορτώνουν κώδικα σε απομονωμένο ή περιορισμένο περιβάλλον.
 
 ```JavaScript
-// Dynamic loading – ‘System’ is default loader
+// Δυναμικό φόρτωμα – Το ‘System’ είναι ο προεπιλεγμένος φορτωτής
 System.import('lib/math').then(function(m) {
   alert("2π = " + m.sum(m.pi, m.pi));
 });
 
-// Create execution sandboxes – new Loaders
+// Δημιουργία ενός κουτιού ασφαλείας για εκτέλεση – new Loaders
 var loader = new Loader({
-  global: fixup(window) // replace ‘console.log’
+  global: fixup(window) // Αντικαθιστά το ‘console.log’
 });
 loader.eval("console.log('hello world!');");
 
-// Directly manipulate module cache
+// Άμεση διαχείριση της cache μονάδων
 System.get('jquery');
-System.set('jquery', Module({$: $})); // WARNING: not yet finalized
+System.set('jquery', Module({$: $})); // ΠΡΟΣΟΧΗ: δεν έχει ολοκληρωθεί ακόμα
 ```
 
 ### Map + Set + WeakMap + WeakSet
-Efficient data structures for common algorithms.  WeakMaps provides leak-free object-key’d side tables.
+Αποδοτικές δομές δεδομένων για κοινού αλγόριθμους. Το WeakMaps παρέχει χωρίς διαρροές πίνακες με κλειδιά από αντικείμενα.
 
 ```JavaScript
 // Sets
@@ -385,14 +387,14 @@ wm.size === undefined
 // Weak Sets
 var ws = new WeakSet();
 ws.add({ data: 42 });
-// Because the added object has no other references, it will not be held in the set
+// Επειδή το νέο αντικείμενο δεν έχει κάποια άλλη αναφορά, δεν θα ενσωματωθεί στο σύνολο.
 ```
 
 ### Proxies
-Proxies enable creation of objects with the full range of behaviors available to host objects.  Can be used for interception, object virtualization, logging/profiling, etc.
+Οι Proxies ενεργοποιούν την δημιουργία αντικειμένων με πλήρες εύρος συμπεριφοράς διαθέσιμη στα αντικείμενα που τους φιλοξενούν. Μπορούν να χρησιμοποιηθούν για υποκλοπή, virtualization αντικειμένων, καταγραφή/δημιουργία προφίλ, κλπ.
 
 ```JavaScript
-// Proxying a normal object
+// Proxying σε ένα κανονικό αντικείμενο
 var target = {};
 var handler = {
   get: function (receiver, name) {
@@ -405,7 +407,7 @@ p.world === 'Hello, world!';
 ```
 
 ```JavaScript
-// Proxying a function object
+// Proxying ένα αντικείμενο συνάρτηση
 var target = function () { return 'I am the target'; };
 var handler = {
   apply: function (receiver, ...args) {
@@ -417,7 +419,7 @@ var p = new Proxy(target, handler);
 p() === 'I am the proxy';
 ```
 
-There are traps available for all of the runtime-level meta-operations:
+Υπάρχουν διαθέσιμες παγίδες για όλες τις μέτα-λειτουργίες σε επίπεδο χρόνου εκτέλεσης:
 
 ```JavaScript
 var handler =
@@ -439,14 +441,14 @@ var handler =
 }
 ```
 
-### Symbols
-Symbols enable access control for object state.  Symbols allow properties to be keyed by either `string` (as in ES5) or `symbol`.  Symbols are a new primitive type. Optional `name` parameter used in debugging - but is not part of identity.  Symbols are unique (like gensym), but not private since they are exposed via reflection features like `Object.getOwnPropertySymbols`.
+### Σύμβολα (Symbols)
+Τα σύμβολα ενεργοποιούν τον έλεγχο πρόσβασης στην κατάσταση των αντικειμένων. Τα σύμβολα επιτρέπουν τις ιδιότητες να έχουν κλειδιά είναι ως `string` (όπως στην ES5) ή `symbol`. Τα σύμβολα είναι νέος πρωταρχικός τύπος δεδομένων. Προαιρετικά παράμετροι `name` χρησιμοποιούνται κατά την αποσφαλμάτωση - αλλά δεν είναι μέρος της οντότητας. Τα σύμβολα είναι μοναδικά (όπως το gensym), αλλά όχι ιδιωτικά αφού μπορούν να εκτεθούν μέσω της ιδιότητας ανάκλασης όπως το `Object.getOwnPropertySymbols`.
 
 
 ```JavaScript
 var MyClass = (function() {
 
-  // module scoped symbol
+  // Σύμβολο μέσα σε μονάδα
   var key = Symbol("key");
 
   function MyClass(privateData) {
@@ -467,39 +469,39 @@ c["key"] === undefined
 ```
 
 ### Subclassable Built-ins
-In ES6, built-ins like `Array`, `Date` and DOM `Element`s can be subclassed.
+Στην ES6, ενσωματωμένα αντικείμενα όπως τα `Array`, `Date` και τα στοιχεία του DOM μπορούν να παράγουν νέες κλάσεις.
 
-Object construction for a function named `Ctor` now uses two-phases (both virtually dispatched):
-- Call `Ctor[@@create]` to allocate the object, installing any special behavior
-- Invoke constructor on new instance to initialize
+Η δημιουργία αντικειμένου για μια συνάρτηση που ονομάζεται `Ctor` τώρα χρησιμοποιεί δύο φάσεις (και οι δύο με εικονική αποστολή ):
+- Κλήση της `Ctor[@@create]` για να διαθέσει το αντικείμενο, εγκαθιστώντας οποιαδήποτε ειδική συμπεριφορά
+- Επίκληση του δημιουργού σε ένα νέο στιγμιότυπο για την αρχικοποίηση
 
-The known `@@create` symbol is available via `Symbol.create`.  Built-ins now expose their `@@create` explicitly.
+Το γνωστό σύμβολο `@@create` είναι διαθέσιμο μέσω του `Symbol.create`.  Τα ενσωματωμένα αντικείμενα τώρα εκθέτουν το δικό τους `@@create` ρητά.
 
 ```JavaScript
-// Pseudo-code of Array
+// Ψευδοκώδικας ενός πίνακα
 class Array {
     constructor(...args) { /* ... */ }
     static [Symbol.create]() {
-        // Install special [[DefineOwnProperty]]
-        // to magically update 'length'
+        // Εγκατάσταση ειδικών [[DefineOwnProperty]]
+        // για την χειρωνακτική ενημέρωση της ιδιότητας 'length'
     }
 }
 
-// User code of Array subclass
+// Ο κώδικας χρήστη μιας υπό-κλάσης πίνακα
 class MyArray extends Array {
     constructor(...args) { super(...args); }
 }
 
-// Two-phase 'new':
-// 1) Call @@create to allocate object
-// 2) Invoke constructor on new instance
+// 'new' δύο φάσεων:
+// 1) Κλήση της @@create για την διέθεση του αντικειμένου
+// 2) Επίκληση του δημιουργού σε νέο στιγμιότυπο
 var arr = new MyArray();
 arr[1] = 12;
 arr.length == 2
 ```
 
-### Math + Number + String + Array + Object APIs
-Many new library additions, including core Math libraries, Array conversion helpers, String helpers, and Object.assign for copying.
+### APIs για μαθηματικά + αριθμούς + συμβολοσειρές + πίνακες + αντικείμενα (math + number + string + array + object APIs)
+Πολλές νέες προσθήκες βιβλιοθηκών, συμπεριλαμβανομένων των Math βιβλιοθηκών, βοηθοί μετατροπής πινάκων, βοηθοί συμβολοσειρών, και Object.assign για αντιγραφή.
 
 ```JavaScript
 Number.EPSILON
@@ -513,29 +515,29 @@ Math.imul(Math.pow(2, 32) - 1, Math.pow(2, 32) - 2) // 2
 "abcde".includes("cd") // true
 "abc".repeat(3) // "abcabcabc"
 
-Array.from(document.querySelectorAll('*')) // Returns a real Array
-Array.of(1, 2, 3) // Similar to new Array(...), but without special one-arg behavior
+Array.from(document.querySelectorAll('*')) // Επιστρέφει ένα πραγματικό πίνακα
+Array.of(1, 2, 3) // Όμοιο με το new Array(...), αλλά χωρίς την ειδική συμπεριφορά one-arg
 [0, 0, 0].fill(7, 1) // [0,7,7]
 [1, 2, 3].find(x => x == 3) // 3
 [1, 2, 3].findIndex(x => x == 2) // 1
 [1, 2, 3, 4, 5].copyWithin(3, 0) // [1, 2, 3, 1, 2]
-["a", "b", "c"].entries() // iterator [0, "a"], [1,"b"], [2,"c"]
-["a", "b", "c"].keys() // iterator 0, 1, 2
-["a", "b", "c"].values() // iterator "a", "b", "c"
+["a", "b", "c"].entries() // επαναλήπτης [0, "a"], [1,"b"], [2,"c"]
+["a", "b", "c"].keys() // επαναλήπτης 0, 1, 2
+["a", "b", "c"].values() // επαναλήπτης "a", "b", "c"
 
 Object.assign(Point, { origin: new Point(0,0) })
 ```
 
-### Binary and Octal Literals
-Two new numeric literal forms are added for binary (`b`) and octal (`o`).
+### Κυριολεκτικά δυαδικών και οκταδικών (binary and octal literals)
+Δυο νέες αριθμητικές μορφές κυριολεκτικών έχουν προστεθεί για τα διάδικα (`b`) και τα οκταδικά (`o`).
 
 ```JavaScript
 0b111110111 === 503 // true
 0o767 === 503 // true
 ```
 
-### Promises
-Promises are a library for asynchronous programming.  Promises are a first class representation of a value that may be made available in the future.  Promises are used in many existing JavaScript libraries.
+### Υποσχέσεις (promises)
+Οι υποσχέσεις είναι μια βιβλιοθήκη για ασύγχρονο προγραμματισμό. Οι υποσχέσεις είναι αναπαράσταση πρώτης κλάσης μια τιμής που ίσως να είναι διαθέσιμη στο μέλλον. Οι υποσχέσεις χρησιμοποιούνται σε πολλές υφιστάμενες βιβλιοθήκες JavaScript.
 
 ```JavaScript
 function timeout(duration = 0) {
@@ -553,15 +555,15 @@ var p = timeout(1000).then(() => {
 })
 ```
 
-### Reflect API
-Full reflection API exposing the runtime-level meta-operations on objects.  This is effectively the inverse of the Proxy API, and allows making calls corresponding to the same meta-operations as the proxy traps.  Especially useful for implementing proxies.
+### API ανάκλασης (reflect api)
+Η πλήρης API ανάκλασης εκθέτει σε επίπεδο χρόνου εκτέλεσης τις μέτα-εργασίες στα αντικείμενα. Αυτό ουσιαστικά είναι το αντίθετο του Proxy API, και επιτρέπει την δημιουργία κλήσεων που αντιστοιχούν στις ίδιες μέτα-εργασίες όπως οι παγίδες των proxy. Είναι ειδικά χρήσιμο για την υλοποίηση των proxies.
 
 ```JavaScript
-// No sample yet
+// Δεν υπάρχει ακόμα δείγμα
 ```
 
-### Tail Calls
-Calls in tail-position are guaranteed to not grow the stack unboundedly.  Makes recursive algorithms safe in the face of unbounded inputs.
+### Κλήσεις ουράς (tail calls)
+Κλήσεις στην θέση της ουράς εγγυώνται πως δεν θα μεγαλώσει η στοίβα απεριόριστα. Αυτό το χαρακτηριστικό κάνει αλγόριθμους επανάληψης ασφαλείς σε απεριόριστη είσοδο. 
 
 ```JavaScript
 function factorial(n, acc = 1) {
@@ -570,7 +572,7 @@ function factorial(n, acc = 1) {
     return factorial(n - 1, n * acc);
 }
 
-// Stack overflow in most implementations today,
-// but safe on arbitrary inputs in ES6
+// Υπερχείλιση στοίβας στις περισσότερες εφαρμογές σήμερα,
+// αλλά ασφαλές σε αυθαίρετες εισόδους στην ES6
 factorial(100000)
 ```
