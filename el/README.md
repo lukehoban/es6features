@@ -241,10 +241,11 @@ interface Iterable {
 }
 ```
 
-### Generators
-Generators simplify iterator-authoring using `function*` and `yield`.  A function declared as function* returns a Generator instance.  Generators are subtypes of iterators which include additional  `next` and `throw`.  These enable values to flow back into the generator, so `yield` is an expression form which returns a value (or throws).
+### Γεννήτριες (Generators)
 
-Note: Can also be used to enable ‘await’-like async programming, see also ES7 `await` proposal.
+Οι γεννήτριες απλοποιούν την συγγραφή επαναληπτών χρησιμοποιώντας το `function*` και `yield`. Μία συνάρτηση που έχει δηλωθεί ως function* επιστρέφει ένα στιγμιότυπο μιας γεννήτριας. Οι γεννήτριες είναι υπό-τύποι επαναληπτών που περιέχει επιπλέον τις συναρτήσεις `next` και `throw`. Αυτές επιτρέπουν στις τιμές να ολισθαίνουν πίσω στην γεννήτρια, έτσι η `yield` είναι μια δήλωση από την οποία επιστρέφει μια τιμή ( ή throws).
+
+Σημείωση: Μπορούν επίσης να χρησιμοποιηθούν για να ενεργοποιήσουν ασύγχρονο προγραμματισμό τύπου αναμονής, δείτε επίσης την πρόταση για το `await` της ES7.
 
 ```JavaScript
 var fibonacci = {
@@ -260,14 +261,14 @@ var fibonacci = {
 }
 
 for (var n of fibonacci) {
-  // truncate the sequence at 1000
+  // Περικοπή της ακολουθίας στα 1000
   if (n > 1000)
     break;
   console.log(n);
 }
 ```
 
-The generator interface is (using [TypeScript](http://typescriptlang.org) type syntax for exposition only):
+Η διεπαφή της γεννήτριας είναι (χρήση της σύνταξης τύπου του [TypeScript](http://typescriptlang.org) μόνο για έκθεση):
 
 ```TypeScript
 interface Generator extends Iterator {
