@@ -528,8 +528,8 @@ Array.of(1, 2, 3) // Όμοιο με το new Array(...), αλλά χωρίς τ
 Object.assign(Point, { origin: new Point(0,0) })
 ```
 
-### Binary and Octal Literals
-Two new numeric literal forms are added for binary (`b`) and octal (`o`).
+### Κυριολεκτικά δυαδικών και οκταδικών (binary and octal literals)
+Δυο νέες αριθμητικές μορφές κυριολεκτικών έχουν προστεθεί για τα διάδικα (`b`) και τα οκταδικά (`o`).
 
 ```JavaScript
 0b111110111 === 503 // true
