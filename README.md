@@ -395,8 +395,8 @@ Proxies enable creation of objects with the full range of behaviors available to
 // Proxying a normal object
 var target = {};
 var handler = {
-  get: function (receiver, name) {
-    return `Hello, ${name}!`;
+  get: function (target, property, receiver) {
+    return `Hello, ${property}!`;
   }
 };
 
@@ -408,7 +408,7 @@ p.world === 'Hello, world!';
 // Proxying a function object
 var target = function () { return 'I am the target'; };
 var handler = {
-  apply: function (receiver, ...args) {
+  apply: function (thisArg, args) {
     return 'I am the proxy';
   }
 };
