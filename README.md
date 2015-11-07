@@ -109,11 +109,11 @@ Template strings provide syntactic sugar for constructing strings.  This is simi
 
 ```JavaScript
 // Basic literal string creation
-`In JavaScript '\n' is a line-feed.`
+`In JavaScript '\n' is a line-feed.` === "In JavaScript '\n' is a line-feed."
 
 // Multiline strings
-`In JavaScript this is
- not legal.`
+`In ES6 this line break is
+ now legal.` === "In ES6 this line break is\n now legal."
 
 // String interpolation
 var name = "Bob", time = "today";
