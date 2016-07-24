@@ -31,7 +31,7 @@ ES6 includes the following new features:
 ## ECMAScript 6 Features
 
 ### Arrows
-Arrows are a function shorthand using the `=>` syntax.  They are syntactically similar to the related feature in C#, Java 8 and CoffeeScript.  They support both statement block bodies as well as expression bodies which return the value of the expression.  Unlike functions, arrows share the same lexical `this` as their surrounding code.
+Arrows are a function shorthand using the `=>` syntax.  They are syntactically similar to the related feature in C#, Java 8 and CoffeeScript.  They support both statement block bodies as well as expression bodies which return the value of the expression.  Unlike functions, arrows share the same lexical `this` as their surrounding code. If an arrow is inside another function, it shares the "arguments" variable of its parent function.
 
 ```JavaScript
 // Expression bodies
@@ -54,6 +54,22 @@ var bob = {
       console.log(this._name + " knows " + f));
   }
 }
+
+// Lexical arguments
+function square() {
+  let example = () => {
+    let numbers = [];
+    for (number of arguments) {
+      numbers.push(number * 2);
+    }
+    
+    return numbers;
+  };
+  
+  return example();
+}
+
+square(2, 4, 7.5, 8, 11.5, 21); // returns: [4, 8, 15, 16, 23, 42]
 ```
 
 More info: [MDN Arrow Functions](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
