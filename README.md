@@ -565,7 +565,7 @@ Two new numeric literal forms are added for binary (`b`) and octal (`o`).
 ```
 
 ### Promises
-Promises are a library for asynchronous programming.  Promises are a first class representation of a value that may be made available in the future.  Promises are used in many existing JavaScript libraries.
+Promises are libraries for asynchronous programming.  Promises are first class representations of a value that may be made available in the future.  Promises are used in many existing JavaScript libraries.
 
 ```JavaScript
 function timeout(duration = 0) {
