@@ -342,7 +342,7 @@ Some additional features include `export default` and `export *`:
 
 ```JavaScript
 // lib/mathplusplus.js
-export * from "lib/math";
+import * from "lib/math";
 export var e = 2.71828182846;
 export default function(x) {
     return Math.log(x);
