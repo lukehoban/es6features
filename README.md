@@ -53,7 +53,7 @@ var bob = {
     this._friends.forEach(f =>
       console.log(this._name + " knows " + f));
   }
-}
+};
 ```
 
 More info: [MDN Arrow Functions](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
@@ -144,17 +144,17 @@ var [a, , b] = [1,2,3];
 
 // object matching
 var { op: a, lhs: { op: b }, rhs: c }
-       = getASTNode()
+       = getASTNode();
 
 // object matching shorthand
 // binds `op`, `lhs` and `rhs` in scope
-var {op, lhs, rhs} = getASTNode()
+var {op, lhs, rhs} = getASTNode();
 
 // Can be used in parameter position
 function g({name: x}) {
   console.log(x);
 }
-g({name: 5})
+g({name: 5});
 
 // Fail-soft destructuring
 var [a] = [];
@@ -175,21 +175,21 @@ function f(x, y=12) {
   // y is 12 if not passed (or passed as undefined)
   return x + y;
 }
-f(3) == 15
+f(3) == 15;
 ```
 ```JavaScript
 function f(x, ...y) {
   // y is an Array
   return x * y.length;
 }
-f(3, "hello", true) == 6
+f(3, "hello", true) == 6;
 ```
 ```JavaScript
 function f(x, y, z) {
   return x + y + z;
 }
 // Pass each elem of array as argument
-f(...[1,2,3]) == 6
+f(...[1,2,3]) == 6;
 ```
 
 More MDN info: [Default parameters](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters), [Rest parameters](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters), [Spread Operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator)
@@ -226,11 +226,11 @@ let fibonacci = {
     return {
       next() {
         [pre, cur] = [cur, pre + cur];
-        return { done: false, value: cur }
+        return { done: false, value: cur };
       }
-    }
+    };
   }
-}
+};
 
 for (var n of fibonacci) {
   // truncate the sequence at 1000
@@ -272,7 +272,7 @@ var fibonacci = {
       yield cur;
     }
   }
-}
+};
 
 for (var n of fibonacci) {
   // truncate the sequence at 1000
@@ -298,16 +298,16 @@ Non-breaking additions to support full Unicode, including new Unicode literal fo
 
 ```JavaScript
 // same as ES5.1
-"𠮷".length == 2
+"𠮷".length == 2;
 
 // new RegExp behaviour, opt-in ‘u’
-"𠮷".match(/./u)[0].length == 2
+"𠮷".match(/./u)[0].length == 2;
 
 // new form
-"\u{20BB7}"=="𠮷"=="\uD842\uDFB7"
+"\u{20BB7}"=="𠮷"=="\uD842\uDFB7";
 
 // new String ops
-"𠮷".codePointAt(0) == 0x20BB7
+"𠮷".codePointAt(0) == 0x20BB7;
 
 // for-of iterates code points
 for(var c of "𠮷") {
@@ -402,7 +402,7 @@ m.get(s) == 34;
 // Weak Maps
 var wm = new WeakMap();
 wm.set(s, { extra: 42 });
-wm.size === undefined
+wm.size === undefined;
 
 // Weak Sets
 var ws = new WeakSet();
@@ -460,7 +460,7 @@ var handler =
   ownKeys:...,
   preventExtensions:...,
   isExtensible:...
-}
+};
 ```
 
 More info: [MDN Proxy](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy)
@@ -488,8 +488,8 @@ var MyClass = (function() {
   return MyClass;
 })();
 
-var c = new MyClass("hello")
-c["key"] === undefined
+var c = new MyClass("hello");
+c["key"] === undefined;
 ```
 
 More info: [MDN Symbol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol)
@@ -523,35 +523,35 @@ class MyArray extends Array {
 // 2) Invoke constructor on new instance
 var arr = new MyArray();
 arr[1] = 12;
-arr.length == 2
+arr.length == 2;
 ```
 
 ### Math + Number + String + Array + Object APIs
 Many new library additions, including core Math libraries, Array conversion helpers, String helpers, and Object.assign for copying.
 
 ```JavaScript
-Number.EPSILON
-Number.isInteger(Infinity) // false
-Number.isNaN("NaN") // false
+Number.EPSILON;
+Number.isInteger(Infinity); // false
+Number.isNaN("NaN"); // false
 
-Math.acosh(3) // 1.762747174039086
-Math.hypot(3, 4) // 5
-Math.imul(Math.pow(2, 32) - 1, Math.pow(2, 32) - 2) // 2
+Math.acosh(3); // 1.762747174039086
+Math.hypot(3, 4); // 5
+Math.imul(Math.pow(2, 32) - 1, Math.pow(2, 32) - 2); // 2
 
-"abcde".includes("cd") // true
-"abc".repeat(3) // "abcabcabc"
+"abcde".includes("cd"); // true
+"abc".repeat(3); // "abcabcabc"
 
-Array.from(document.querySelectorAll('*')) // Returns a real Array
-Array.of(1, 2, 3) // Similar to new Array(...), but without special one-arg behavior
-[0, 0, 0].fill(7, 1) // [0,7,7]
-[1, 2, 3].find(x => x == 3) // 3
-[1, 2, 3].findIndex(x => x == 2) // 1
-[1, 2, 3, 4, 5].copyWithin(3, 0) // [1, 2, 3, 1, 2]
-["a", "b", "c"].entries() // iterator [0, "a"], [1,"b"], [2,"c"]
-["a", "b", "c"].keys() // iterator 0, 1, 2
-["a", "b", "c"].values() // iterator "a", "b", "c"
+Array.from(document.querySelectorAll('*')); // Returns a real Array
+Array.of(1, 2, 3); // Similar to new Array(...), but without special one-arg behavior
+[0, 0, 0].fill(7, 1); // [0,7,7]
+[1, 2, 3].find(x => x == 3); // 3
+[1, 2, 3].findIndex(x => x == 2); // 1
+[1, 2, 3, 4, 5].copyWithin(3, 0); // [1, 2, 3, 1, 2]
+["a", "b", "c"].entries(); // iterator [0, "a"], [1,"b"], [2,"c"]
+["a", "b", "c"].keys(); // iterator 0, 1, 2
+["a", "b", "c"].values(); // iterator "a", "b", "c"
 
-Object.assign(Point, { origin: new Point(0,0) })
+Object.assign(Point, { origin: new Point(0,0) });
 ```
 
 More MDN info: [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number), [Math](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math), [Array.from](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from), [Array.of](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/of), [Array.prototype.copyWithin](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/copyWithin), [Object.assign](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
@@ -560,8 +560,8 @@ More MDN info: [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/
 Two new numeric literal forms are added for binary (`b`) and octal (`o`).
 
 ```JavaScript
-0b111110111 === 503 // true
-0o767 === 503 // true
+0b111110111 === 503; // true
+0o767 === 503; // true
 ```
 
 ### Promises
@@ -571,7 +571,7 @@ Promises are a library for asynchronous programming.  Promises are a first class
 function timeout(duration = 0) {
     return new Promise((resolve, reject) => {
         setTimeout(resolve, duration);
-    })
+    });
 }
 
 var p = timeout(1000).then(() => {
@@ -580,7 +580,7 @@ var p = timeout(1000).then(() => {
     throw new Error("hmm");
 }).catch(err => {
     return Promise.all([timeout(100), timeout(200)]);
-})
+});
 ```
 
 More info: [MDN Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
@@ -606,5 +606,5 @@ function factorial(n, acc = 1) {
 
 // Stack overflow in most implementations today,
 // but safe on arbitrary inputs in ES6
-factorial(100000)
+factorial(100000);
 ```
