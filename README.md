@@ -176,6 +176,7 @@ function f(x, y=12) {
   return x + y;
 }
 f(3) == 15
+f(3,6) == 9
 ```
 ```JavaScript
 function f(x, ...y) {
@@ -262,10 +263,22 @@ Generators simplify iterator-authoring using `function*` and `yield`.  A functio
 Note: Can also be used to enable ‘await’-like async programming, see also ES7 `await` proposal.
 
 ```JavaScript
+// Basic usage
+function* generatorFunction() {
+  yield 1;
+  yield 2;
+}
+
+let genObj = generatorFunction();
+genObj.next() // { done: false, value: 1 }
+genObj.next() // { done: false, value: 2 }
+genObj.next() // { done: true }
+
+// Iterator authoring
 var fibonacci = {
   [Symbol.iterator]: function*() {
     var pre = 0, cur = 1;
-    for (;;) {
+    while (true) {
       var temp = pre;
       pre = cur;
       cur += temp;
@@ -276,8 +289,7 @@ var fibonacci = {
 
 for (var n of fibonacci) {
   // truncate the sequence at 1000
-  if (n > 1000)
-    break;
+  if (n > 1000) break;
   console.log(n);
 }
 ```
