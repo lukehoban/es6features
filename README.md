@@ -41,6 +41,7 @@ var nums = evens.map((v, i) => v + i);
 var pairs = evens.map(v => ({even: v, odd: v + 1}));
 
 // Statement bodies
+var fives = [];
 nums.forEach(v => {
   if (v % 5 === 0)
     fives.push(v);
