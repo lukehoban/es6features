@@ -608,3 +608,8 @@ function factorial(n, acc = 1) {
 // but safe on arbitrary inputs in ES6
 factorial(100000)
 ```
+
+### Translation
+This document is also available in other languages:
+
+  - ![kr](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/South-Korea.png) **Korean**: [FEDevelopers/es6features](https://github.com/FEDevelopers/es6features)
