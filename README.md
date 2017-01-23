@@ -35,11 +35,14 @@ Arrows are a function shorthand using the `=>` syntax.  They are syntactically s
 
 ```JavaScript
 // Expression bodies
+var evens = [2, 4, 6];
 var odds = evens.map(v => v + 1);
 var nums = evens.map((v, i) => v + i);
 var pairs = evens.map(v => ({even: v, odd: v + 1}));
 
 // Statement bodies
+var nums = [1, 5, 7, 10];
+var fives = []
 nums.forEach(v => {
   if (v % 5 === 0)
     fives.push(v);
@@ -48,7 +51,7 @@ nums.forEach(v => {
 // Lexical this
 var bob = {
   _name: "Bob",
-  _friends: [],
+  _friends: ["Alice", "Jack"],
   printFriends() {
     this._friends.forEach(f =>
       console.log(this._name + " knows " + f));
