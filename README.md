@@ -325,7 +325,7 @@ Language-level support for modules for component definition.  Codifies patterns 
 export function sum(x, y) {
   return x + y;
 }
-export var pi = 3.141593;
+export const pi = 3.141593;
 ```
 ```JavaScript
 // app.js
@@ -343,7 +343,7 @@ Some additional features include `export default` and `export *`:
 ```JavaScript
 // lib/mathplusplus.js
 export * from "lib/math";
-export var e = 2.71828182846;
+export const e = 2.71828182846;
 export default function(x) {
     return Math.log(x);
 }
