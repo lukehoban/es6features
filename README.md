@@ -118,8 +118,10 @@ Template strings provide syntactic sugar for constructing strings.  This is simi
 `In JavaScript '\n' is a line-feed.`
 
 // Multiline strings
-`In JavaScript this is
- not legal.`
+`In JavaScript, this is not legal
+ with '' single or "" double quoted
+ strings, but with template literals
+ it's fine!`
 
 // String interpolation
 var name = "Bob", time = "today";
