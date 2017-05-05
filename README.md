@@ -390,7 +390,7 @@ Efficient data structures for common algorithms.  WeakMaps provides leak-free ob
 // Sets
 var s = new Set();
 s.add("hello").add("goodbye").add("hello");
-s.size === 2;
+s.size === 3;
 s.has("hello") === true;
 
 // Maps
@@ -532,7 +532,7 @@ Many new library additions, including core Math libraries, Array conversion help
 ```JavaScript
 Number.EPSILON
 Number.isInteger(Infinity) // false
-Number.isNaN("NaN") // false
+Number.isNaN("NaN") // true
 
 Math.acosh(3) // 1.762747174039086
 Math.hypot(3, 4) // 5
