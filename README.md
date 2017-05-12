@@ -598,8 +598,9 @@ More info: [MDN Reflect](https://developer.mozilla.org/en-US/docs/Web/JavaScript
 Calls in tail-position are guaranteed to not grow the stack unboundedly.  Makes recursive algorithms safe in the face of unbounded inputs.
 
 ```JavaScript
-function factorial(n, acc = 1) {
+function factorial(n, acc) {
     'use strict';
+    if (acc == null) acc = 1;
     if (n <= 1) return acc;
     return factorial(n - 1, n * acc);
 }
