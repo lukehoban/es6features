@@ -1,4 +1,4 @@
-
+// run this file using path-to-arrow-folder > node index.js
 
 console.log("Hi")
 
