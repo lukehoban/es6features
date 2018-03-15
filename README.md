@@ -447,7 +447,7 @@ p() === 'I am the proxy';
 // JavaScript operation. The methods are the same as those of proxy
 // handlers. Reflect is not a function object, so it's not constructable.
 
-var advance = new Proxy({}, {
+var advanced = new Proxy({}, {
   get(target, property, receiver) {
     console.log(`get called for field: ${property}`);
     return Reflect.get(target, property, receiver);
