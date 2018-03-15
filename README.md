@@ -441,6 +441,27 @@ var p = new Proxy(target, handler);
 p() === 'I am the proxy';
 ```
 
+```JavaScript
+// Advanced field interception with Proxy and the Reflect object
+// Reflect is a built-in object that provides methods for interceptable
+// JavaScript operation. The methods are the same as those of proxy
+// handlers. Reflect is not a function object, so it's not constructable.
+
+var advanced = new Proxy({}, {
+  get(target, property, receiver) {
+    console.log(`get called for field: ${property}`);
+    return Reflect.get(target, property, receiver);
+  },
+  set(target, property, value, receiver) {
+    console.log(`set called for field: ${property} and value: ${value}`);
+    return Reflect.set(target, property, value, receiver);
+  }
+});
+
+advanced.firstName = 'foo';
+advanced.lastName ='bar';
+```
+
 There are traps available for all of the runtime-level meta-operations:
 
 ```JavaScript
